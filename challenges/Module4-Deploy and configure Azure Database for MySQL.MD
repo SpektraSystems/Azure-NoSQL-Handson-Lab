@@ -1,6 +1,4 @@
 # Deploy and configure Azure Database for MySQL
-<br>
-
 ### Before you start
 
 Please use  PowerBI-VM to execute this lab.
