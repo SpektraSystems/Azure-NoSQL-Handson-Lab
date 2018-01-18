@@ -36,8 +36,9 @@ Conclusion
 Azure Database for MySQL provides a fully managed database service for application development and deployment allowing you to provision a MySQL database instance in minutes and scale it on the fly.
 With comprehensive pricing models, and configurable sizing, you get all the features you need such as high-availability, monitoring and security, and backup and recovery, all with reduced management overhead.  These features are built into the service and are aligned to a simple, predictable pricing model. 
 <br>
+
 # Provision MySQL Server 
-<br>
+
 ## Create a database using Azure CLI
 
 1. Open a PowerShell command prompt, you can find a shortcut on the taskbar, and run:
@@ -63,8 +64,9 @@ With comprehensive pricing models, and configurable sizing, you get all the feat
 1. Congratuations. You now have somewhere to store your data.
 
 <br>
+
 ## Deploy the website
-<br>
+
 We now need to change some configuration code for the WordPress website so that it is able to consume data from the database which we have just provisioned. Once we have updated the code we'll deploy it to an Azure App Service which has already been provisioned.
 
 1. First we need to acquire a copy of the code for the website. To do this we will clone it from an existing GitHub repository. In the open PowerShell command prompt run the following commands:
@@ -139,8 +141,9 @@ We now need to change some configuration code for the WordPress website so that 
 1. The website is now updated and just needs data
 
 <br>
+
 ## Populate Data
-<br>
+
 Before our WordPress website will work we need to populate the database with data.  To do this, we are going to use The MySQL Workbench to connect to our ``Azure Database for MySQL`` that we already have up and running and use a script to restore data into the database.
 
 1. Open MySQL Workbench  
@@ -178,8 +181,8 @@ Before our WordPress website will work we need to populate the database with dat
 1. The website should be up and running  
    ![Running website](images/running_website.png "Running website")
    <br>
-   ## Scale Up Azure Database for MySQL
-<br>
+## Scale Up Azure Database for MySQL
+
 Microsoft Azure offers a variety of pricing tiers for the Azure Database for MySQL service. In the earlier stages of this hands on lab, the lowest priced teir was used. In the real world, there may be times the application which relies upon your MySQL database will come under heavy load. In turn, this load may consume all of the resources available to your MySQL database instance, causing degraded performance. Scaling up your Azure Database for MySQL will help to noticeably improve performance in many of these cases, allowing you to keep processing your data efficiently.
 
 Refer to these documentation articles for more infomation on [Pricing Tiers](https://docs.microsoft.com/en-us/azure/mysql/concepts-service-tiers) and [Compute Units](https://docs.microsoft.com/en-us/azure/mysql/concepts-compute-unit-and-storage) should you want to get more information on scaling your MySQL databases.
@@ -220,6 +223,6 @@ There are two options to scale up or scale down the Azure Database for MySQL ser
     <span style="color:blue"> az mysql  server update [MyResourceGroupName] --name [mysqlDatabaseName] --compute-units 50
     <br>
     
-    # CONCLUSION
+# CONCLUSION
     <br>
 As a fully integrated service, Azure Database for MySQL plugs you into Microsoft’s global network of value-add services, datacenters, security features, and round-the-clock monitoring.  Azure Database for MySQL is designed to deliver highly available MySQL Compatibility at scale to the forefront, all backed by a best of class SLA.   Trust Azure to keep your enterprise-ready MySQL applications up and running.
