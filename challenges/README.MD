@@ -4,14 +4,9 @@
 This repository contains practical exercises for the Azure CosmosDB Hackfest program. Here you will find a copy of the event schedule, challenge exercises, solutions, and presentations.
 
 <strong>Modules:</strong>
-
 <table>
   <tr>
-    <td><strong><font size="+1">Module</font></strong></td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/SpektraSystems/Azure-CosmosDB-and-Mysql-Postgres-Hands-on-Lab/blob/master/challenges/Module0-Getting%20Started.MD" target="_blank">Module0-Getting Started.MD</a></td>
-    <td>Monday 1/22/2018</td>
   </tr>
   <tr>
     <td><a href="https://github.com/SpektraSystems/Azure-CosmosDB-and-Mysql-Postgres-Hands-on-Lab/blob/master/challenges/Module1-Introduction%20to%20Cosmos%20DB.MD" target="_blank">Module1-Introduction to Cosmos DB.MD</a></td>
