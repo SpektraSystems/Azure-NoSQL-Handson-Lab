@@ -10,11 +10,11 @@ Throughout this hands on lab there are many cli commands given. Some of these co
 
 1. Create the Azure resources.
     
-  Simply click the Deploy to Azure button below and follow the wizard to create the resources. You will need to log in to the Azure Portal.
+  Simply click the Deploy to Azure button below and follow the wizard to create the resources. You will need to log in to the Azure Portal, Use the lab azure credentials to login.
                                                                      
   [![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSpektraSystems%2FAzure-CosmosDB-and-Mysql-Postgres-Hands-on-Lab%2Fmaster%2Ftemplate%2Fmysql-resources.azuredeploy.json)
 
-  The resources will be deployed to the resource group your received as a part of Hands-on lab.
+  Please select existing resource group for deployment.
 
 
 ### Scenarios ###
@@ -46,7 +46,7 @@ With comprehensive pricing models, and configurable sizing, you get all the feat
     <span style="color:blue">az login
 
 1. When the prompt window instructs your to open [https://aka.ms/devicelogin](https://aka.ms/devicelogin) and enter the code shown in the console window  
-    ![Device Login code](img/az-login-code.png)
+    ![Device Login code](images/az-login-code.png)
 
 1. Sign in with your Azure username and password
 
@@ -84,7 +84,7 @@ We now need to change some configuration code for the WordPress website so that 
 1. Now we need to update the code to use the MySQL databse which was previously provisioned. To do this, Open Visual Studio Code
 
 1. Using the file menu choose Open File
-    ![Open File](img/vscode-open-file.png)
+    ![Open File](images/vscode-open-file.png)
 
 1. Open the `wp-config.php` file at `C:\code\bikeshop\`
 
@@ -93,7 +93,7 @@ We now need to change some configuration code for the WordPress website so that 
 1. On line 47 replace `[Password]` with **mysqlAdminPassw0rd!**, the value of the password for your database administrator account [previously provisioned](1.md)
 
 1. On line 51 replace `[Servername]` with **[mysqlDatabaseName]**, the server name for your database [previously provisioned](1.md)
-   ![wp_config changes](img/wp_config.png "wp config changes")
+   ![wp_config changes](images/wp_config.png "wp config changes")
 
 1. Save the changes
 
@@ -106,18 +106,18 @@ We now need to change some configuration code for the WordPress website so that 
 
 1. Next we need the URL for the git repository which is configured for the website which will host the WordPress code. Open [https://portal.azure.com](https://portal.azure.com)
 
-1. Open the Resource Groups blade and then open the resource group you provisioned to during the initial set up for the lab.
+1. Open the Resource Groups blade and then open the resource group available to you.
 
 1. Verify that there are:
     - An Azure Database for MySQL
     - An Azure App Service
     - An App Service Plan
-   ![ResourceGroup Items](img/resourcegroup_items.png "Resource Group Items")
+   ![ResourceGroup Items](images/resourcegroup_items.png "Resource Group Items")
 
 1. Open the App Service blade
 
 1. In on the overview section copy the **Git clone url**
-   ![Git Clone URL](img/git_clone_url.png "GIT Clone URL")
+   ![Git Clone URL](images/git_clone_url.png "GIT Clone URL")
 
 1. Now we need to configure the local git repository to know about the website. To do this we will add a new remote to the repository:
 
@@ -133,7 +133,7 @@ We now need to change some configuration code for the WordPress website so that 
     <span style="color:blue"> git push website
 
 1. In the pop-up enter the deployment credentials password that you set previously and click OK
-    ![Git Credentials](img/git-credentials-pop-up.png)
+    ![Git Credentials](images/git-credentials-pop-up.png)
 
 1. Wait for the push to the website to complete
 
@@ -145,39 +145,39 @@ We now need to change some configuration code for the WordPress website so that 
 Before our WordPress website will work we need to populate the database with data.  To do this, we are going to use The MySQL Workbench to connect to our ``Azure Database for MySQL`` that we already have up and running and use a script to restore data into the database.
 
 1. Open MySQL Workbench  
-    ![Open MySQL Workbench](img/open-mysql-workbench.png)
+    ![Open MySQL Workbench](images/open-mysql-workbench.png)
 
 1. Click OK and ignore the unsupported operating system warning
 
 1. Click on the + icon to add a new MySQL Connection  
-    ![Add new connection](img/add-mysql-connection.png)
+    ![Add new connection](images/add-mysql-connection.png)
 
 1. Setup the new connection to MySQL using the server name, username, and password [previously provisioned](1.ProvisionServer.md)
 
 1. Click on "Store in Vault..." to enter password, then click OK  
-   ![Workbench DB Connection](img/wb_db_connection.png "Workbench DB Connection")
+   ![Workbench DB Connection](images/wb_db_connection.png "Workbench DB Connection")
 
 1. Click on Test Connection to verify that you have configured the connection correctly. If you have issues check that you have provided the all of the details correctly. Once the test connection action succeeds click on OK
 
 1. Double click on the connection name to open a session against your MySQL database  
-   ![DB connection](img/wb_open_connection.png "DB connection")
+   ![DB connection](images/wb_open_connection.png "DB connection")
 
 1. Choose **File > Run SQL Script**  
-    ![Run SQL Script](img/mysql-run-script.png)
+    ![Run SQL Script](images/mysql-run-script.png)
 
 1. Open the sql file from `C:\code\bikeshop\bikeshop.sql` and click the Run  
-   ![Workbench run query](img/running_query_create_schema.png "Run Query in Workbench")
+   ![Workbench run query](images/running_query_create_schema.png "Run Query in Workbench")
 
 1. Once the script has been executed the database schema "bikestore" will have been created, click the Close button
 
 1. Click the refresh icon to see it listed in the set of availble schema  
-   ![Schema created](img/workbench_schema_created.png "DB Schema Created")
+   ![Schema created](images/workbench_schema_created.png "DB Schema Created")
 
 1. Return to Azure portal and in the App Service blade click on the URL for the website  
-   ![Open website](img/appservices.png)
+   ![Open website](images/appservices.png)
 
 1. The website should be up and running  
-   ![Running website](img/running_website.png "Running website")
+   ![Running website](images/running_website.png "Running website")
    
    ## Scale Up Azure Database for MySQL
 
@@ -194,12 +194,12 @@ There are two options to scale up or scale down the Azure Database for MySQL ser
 1. Open All Resources blade and click on the MySQL database that you want to scale
 
 1. Click **Pricing Tier** option  
-    ![Pricing Tier](img/mysql-pricing-option.png)
+    ![Pricing Tier](images/mysql-pricing-option.png)
 
 1. Change the **Compute Units** up or down as need and click OK to save changes.
     > Note that currently only the Basic level at either 50 or 100 compute units is available  
 
-    ![Compute units](img/mysql-compute.png)
+    ![Compute units](images/mysql-compute.png)
 
 ### Using the Azure CLI 2.0
 
@@ -210,7 +210,7 @@ There are two options to scale up or scale down the Azure Database for MySQL ser
     <span style="color:blue"> az mysql server list
 
 1. The cli will provide a list of your MySQL databases, there should only be one. Note the resourceGroup and name values  
-    ![MySQL Server List](img/az-mysql-server-list.png)
+    ![MySQL Server List](images/az-mysql-server-list.png)
 
 1. On the command prompt, run below command to scale up to 100 compute units
 
