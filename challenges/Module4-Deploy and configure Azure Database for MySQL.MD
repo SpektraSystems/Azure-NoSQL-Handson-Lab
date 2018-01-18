@@ -1,6 +1,7 @@
 # Deploy and configure Azure Database for MySQL
 <br>
-### Before you start.
+
+### Before you start
 
 Please use  PowerBI-VM to execute this lab.
 
@@ -93,7 +94,7 @@ We now need to change some configuration code for the WordPress website so that 
 1. On line 47 replace `[Password]` with **mysqlAdminPassw0rd!**, the value of the password for your database administrator account [previously provisioned](1.md)
 
 1. On line 51 replace `[Servername]` with **[mysqlDatabaseName]**, the server name for your database [previously provisioned](1.md)
-   ![wp_config changes](images/wp_config.png "wp config changes")
+   ![wp_config changes](images/wp_config.PNG "wp config changes")
 
 1. Save the changes
 
