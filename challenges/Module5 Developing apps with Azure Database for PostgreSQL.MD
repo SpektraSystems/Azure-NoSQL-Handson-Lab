@@ -35,7 +35,7 @@ Throughout this lab, we will use the **Azure Command Line Interface** or Azure C
 5. Click **Create Storage** 
 6. Once the storage gets created, your **Cloud Shell** will initialize and very shortly be ready to use
 
-    ![Shell is Ready](images/shell.png)      
+    ![Shell is Ready](images/shell.PNG)      
     
     > Note: the Resource Group name, the Storage Account, and the File Share you created are displayed in the CLI while it initializes.
     > 
