@@ -3,7 +3,7 @@
 
 Whether you’re an IT Admin or a Developer, there are a universe of options available to you when it comes to Databases. From Proprietary to Open Source where do you start? In this workshop we'll take a look at the new Azure Database for MySQL/Postgres and CosmosDB which will allow you to get your apps up and running in minutes. We'll see when to take advantage of traditional RDBMS or NoSQL databases and how to continue to leverage the OSS investments your team has always used and loved.
 
-This repository contains practical exercises for the Azure CosmosDB Hackfest program. Here you will find a copy of the event schedule, challenge exercises, solutions, and presentations.
+This repository contains practical exercises for the NOSQL Hackfest program. Here you will find a copy of the event schedule, challenge exercises, solutions, and presentations.
 
 <strong>Confirmed Locations:</strong>
 
