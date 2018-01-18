@@ -1,7 +1,8 @@
-# Azure Cosmos DB and MySQL/PostgreSQL Hackfest 
+# From RDBMS to NoSQL: A look at MySQL, Postgres and CosmosDB on Azure
 ### Utilizing Azure's Platform-as-a-Service (PaaS), next-generation, multi-model, globally distributed NoSQL platform for real-time applications
 
 This repository contains practical exercises for the Azure CosmosDB Hackfest program. Here you will find a copy of the event schedule, challenge exercises, solutions, and presentations.
+
 
 <strong>Modules:</strong>
 
