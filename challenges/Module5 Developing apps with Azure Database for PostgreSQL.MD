@@ -1,4 +1,4 @@
-#Developing apps with Azure Database for PostgreSQL
+# Developing apps with Azure Database for PostgreSQL
 
 ### Before you start.
 
