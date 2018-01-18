@@ -12,8 +12,12 @@ This repository contains practical exercises for the Azure CosmosDB Hackfest pro
   <tr>
     <td><a href="https://github.com/SpektraSystems/Azure-CosmosDB-and-Mysql-Postgres-Hands-on-Lab/blob/master/challenges/Module1-Introduction%20to%20Cosmos%20DB.MD" target="_blank">Module1-Introduction to Cosmos DB.MD</a></td>
   </tr>
+   <tr>
+    <td><a href="https://github.com/SpektraSystems/Azure-CosmosDB-and-Mysql-Postgres-Hands-on-Lab/blob/master/challenges/Module2-Migrating%20MongoDB%20Apps%20to%20Azure%20Cosmos%20DB(Mongo%20API).MD" target="_blank">Optional: Module 2: Migrate MongoDB Applications to Azure Cosmos DB(Mongo API)
+</a></td>
+  </tr>
     <tr>
-    <td><a href="https://github.com/SpektraSystems/Azure-CosmosDB-and-Mysql-Postgres-Hands-on-Lab/blob/master/challenges/Module3-Migrating%20MongoDB%20Apps%20to%20Azure%20Cosmos%20DB(Mongo%20API).MD" target="_blank">Optional: Module 3: Migrate MongoDB Application to Azure Cosmos DB(SQL API)
+    <td><a href="https://github.com/SpektraSystems/Azure-CosmosDB-and-Mysql-Postgres-Hands-on-Lab/blob/master/challenges/Module3-Migrating%20MongoDB%20Apps%20to%20Azure%20Cosmos%20DB(Mongo%20API).MD" target="_blank">Module 3: Migrate MongoDB Application to Azure Cosmos DB(SQL API) [Optional Module]
 </a></td>
   </tr>
     <tr>
