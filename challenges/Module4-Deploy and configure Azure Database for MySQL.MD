@@ -1,10 +1,8 @@
 # Deploy and configure Azure Database for MySQL
 
-### Pre-requisites for the lab ###
+### you start.
 
-Please login to PowerBI-VM to execute this lab.
-
-### Before you start.
+Please use  PowerBI-VM to execute this lab.
 
 Throughout this hands on lab there are many cli commands given. Some of these contain values that are listed with like this [vaule], in instances where this square bracket notation is used you must provide an apropriate value.
 
@@ -16,7 +14,7 @@ Throughout this hands on lab there are many cli commands given. Some of these co
                                                                      
   [![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSpektraSystems%2FAzure-CosmosDB-and-Mysql-Postgres-Hands-on-Lab%2Fmaster%2Ftemplate%2Fmysql-resources.azuredeploy.json)
 
-  The resources will be deployed to a Resource Group. You can delete the resource group in order to remove all the created resources at any time.
+  The resources will be deployed to the resource group your received as a part of Hands-on lab.
 
 
 ### Scenarios ###
@@ -43,7 +41,7 @@ With comprehensive pricing models, and configurable sizing, you get all the feat
 
 ## Create a database using Azure CLI
 
-1. Open a PowerShell command prompt, you can find a shortcut on the desktop, and run:
+1. Open a PowerShell command prompt, you can find a shortcut on the taskbar, and run:
 
     <span style="color:blue">az login
 
