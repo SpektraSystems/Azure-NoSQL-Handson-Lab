@@ -21,11 +21,11 @@ This repository contains practical exercises for the Azure CosmosDB Hackfest pro
 </a></td>
   </tr>
     <tr>
-    <td><a href="https://github.com/SpektraSystems/Azure-CosmosDB-and-Mysql-Postgres-Hands-on-Lab/blob/master/challenges/Module4-Deploy%20and%20configure%20Azure%20Database%20for%20MySQL.MD" target="_blank">Deploy and configure Azure Database for MySQL
+    <td><a href="https://github.com/SpektraSystems/Azure-CosmosDB-and-Mysql-Postgres-Hands-on-Lab/blob/master/challenges/Module4-Deploy%20and%20configure%20Azure%20Database%20for%20MySQL.MD" target="_blank">Module 4: Deploy and configure Azure Database for MySQL
 </a></td>
   </tr>
     <tr>
-    <td><a href="https://github.com/SpektraSystems/Azure-CosmosDB-and-Mysql-Postgres-Hands-on-Lab/blob/master/challenges/Module5%20Developing%20apps%20with%20Azure%20Database%20for%20PostgreSQL.MD" target="_blank">Developing apps with Azure Database for PostgreSQL
+    <td><a href="https://github.com/SpektraSystems/Azure-CosmosDB-and-Mysql-Postgres-Hands-on-Lab/blob/master/challenges/Module5%20Developing%20apps%20with%20Azure%20Database%20for%20PostgreSQL.MD" target="_blank">Module 4: Developing apps with Azure Database for PostgreSQL
 </a></td>
   </tr>
 </table>
