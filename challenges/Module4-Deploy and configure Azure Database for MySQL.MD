@@ -18,11 +18,11 @@ Throughout this hands on lab there are many cli commands given. Some of these co
 
 ### Scenarios ###
 
-Azure Database for MySQL
+[Azure Database for MySQL](#azure-database-for-mysq)
 
 Scenario 1: Provision Azure Database for MySQL
 
->Scenario 2: Deplopy website code
+Scenario 2: Deplopy website code
 
 Scenario 3: Popluate MySQL with data
 
