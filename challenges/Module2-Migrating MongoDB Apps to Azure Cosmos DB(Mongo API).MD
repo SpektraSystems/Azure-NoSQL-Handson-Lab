@@ -454,7 +454,8 @@ As a part of Lab, you may want to restrict access to your Database from the Linu
 
 Azure Cosmos DB allows you to scale the throughput of a collection by just a couple of clicks.In order to scale up and down the throughput of a Cosmos DB collection, navigate to the Azure Cosmos DB account page and click on Scale.
 
-Here you should see the current throughput and options to increase/decrease the throughput. You can make the necessary changes and Click **Save**.
+Here you should see the current throughput and options to increase/decrease the throughput. You can make the necessary changes and Click **Save**. 
+
 <img src="images/scalethroughput.png"/><br/>
 
 ## Understanding Cosmos DB Backup and restore functionality.
