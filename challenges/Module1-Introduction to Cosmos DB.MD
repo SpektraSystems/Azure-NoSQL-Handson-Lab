@@ -223,10 +223,10 @@ For example: SELECT * FROM c  WHERE c.Sector= "Financial"
 <img src="images/records.jpg"/><br/>
 4. Click **Close and Apply** to save the data model.
 5. The following shows the basic steps of creating a simple interactive Pie Chart view report.
-- For our example, we will create a pie chart view showing the document sector and the count of Shares Outstanding for each sector. In the Visualizations pane, click on the pie chart visual type as highlighted in the screenshot above.
+ - For our example, we will create a pie chart view showing the document sector and the count of Shares Outstanding for each sector. In the Visualizations pane, click on the pie chart visual type as highlighted in the screenshot above.
 <img src="images/piechart.jpg"/><br/>
-- Now, drag and drop the column on the right side "Document.Shares Outstanding" field from the Fields pane to the Values   Visualizations pane.
-- Next, drag and drop the Document.Sector field to the Filters property.
-- You should now see the Pie Chart showing different sectors in relational to the Count of Shares Outstanding values.
+ - Now, drag and drop the column on the right side "Document.Shares Outstanding" field from the Fields pane to the Values   Visualizations pane.
+ - Next, drag and drop the Document.Sector field to the Filters property.
+ - You should now see the Pie Chart showing different sectors in relational to the Count of Shares Outstanding values.
 <img src="images/piechart1.jpg"/><br/>
-- You now have created a basic report. You can further customize the report by adding more visualizations.
+ - You now have created a basic report. You can further customize the report by adding more visualizations.
