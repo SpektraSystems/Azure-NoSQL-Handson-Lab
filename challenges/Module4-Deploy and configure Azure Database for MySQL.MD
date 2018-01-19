@@ -18,17 +18,17 @@ Throughout this hands on lab there are many cli commands given. Some of these co
 
 ### Scenarios ###
 
-Azure Database for MySQL
+[Azure Database for MySQL](#azure-database-for-mysq)
 
-Scenario 1: Provision Azure Database for MySQL
+[Scenario 1: Provision Azure Database for MySQL](#provision-mysql-server)
 
->Scenario 2: Deplopy website code
+[Scenario 2: Deplopy website code](#deploy-the-website)
 
-Scenario 3: Popluate MySQL with data
+[Scenario 3: Popluate MySQL with data](#populate-data)
 
-Scenario 4: Scale up
+[Scenario 4: Scale up](#scale-sp-azure-database-for-mysql)
 
-Conclusion
+[Conclusion](#conclusion)
 
 
 # Azure Database for MySQL
@@ -41,7 +41,7 @@ With comprehensive pricing models, and configurable sizing, you get all the feat
 
 ## Create a database using Azure CLI
 
-1. Open a PowerShell command prompt, you can find a shortcut on the taskbar, and run:
+1. Open a PowerShell command prompt, you can find a shortcut on the taskbar and run:
 
     <span style="color:blue">az login
 
@@ -52,7 +52,7 @@ With comprehensive pricing models, and configurable sizing, you get all the feat
 
 1. You now have an Azure CLI session open against the Azure Subscription hosting your lab
 
-1. You will now use the CLI to provision an Azure Database for MySQL. In the open PowerShell  prompt, use the following command to provision an new Azure Database for MySQL:
+1. You will now use the CLI to provision an Azure Database for MySQL. In the PowerShell  prompt, use the following command to provision an new Azure Database for MySQL:
     > Note: It would be best to provision this in the Resource Group created using the Azure Deploy tool.
 
      <span style="color:blue"> az mysql server create --resource-group [MyResourceGroupName] --name [mysqlDatabaseName] --location westus --admin-user mysqlAdminUser --admin-password mysqlAdminPassw0rd! --performance-tier Basic --compute-units 50 --ssl-enforcement Disabled
@@ -62,29 +62,28 @@ With comprehensive pricing models, and configurable sizing, you get all the feat
    <span style="color:blue"> az mysql server firewall-rule create --resource-group [MyResourceGroupName] --server [mysqlDatabaseName]--name AllowAllIps --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
 
 1. Congratuations. You now have somewhere to store your data.
-
 <br>
 
 ## Deploy the website
 
 We now need to change some configuration code for the WordPress website so that it is able to consume data from the database which we have just provisioned. Once we have updated the code we'll deploy it to an Azure App Service which has already been provisioned.
 
-1. First we need to acquire a copy of the code for the website. To do this we will clone it from an existing GitHub repository. In the open PowerShell command prompt run the following commands:
+1. First, we need to acquire a copy of the code for the website. To do this, we will clone it from an existing GitHub repository. In the open PowerShell command prompt run the following commands:
 
     <span style="color:blue"> cd \  
     <span style="color:blue"> mkdir code  
     <span style="color:blue"> cd code  
     <span style="color:blue"> git clone https://github.com/gavinbarron/bikeshop.git
 
-1. Next we need to set some git configuration values so that we can push any changes which are made to remote repositories. To do this run the following commands in the command prompt:
+1. Next, we need to set some git configuration values so that we can push any changes which are made to remote repositories. To do this, run the following commands in the command prompt:
 
     <span style="color:blue"> cd bikeshop  
     <span style="color:blue"> git config user.name "holuser"  
     <span style="color:blue"> git config user.email "me@me.net"  
 
-1. Now we need to update the code to use the MySQL databse which was previously provisioned. To do this, Open Visual Studio Code
+1. Now, we need to update the code to use the MySQL databse which was previously provisioned. To do this, Open Visual Studio Code
 
-1. Using the file menu choose Open File
+1. Using the file menu choose Open File </br>
     ![Open File](images/vscode-open-file.png)
 
 1. Open the `wp-config.php` file at `C:\code\bikeshop\`
@@ -115,9 +114,9 @@ We now need to change some configuration code for the WordPress website so that 
     - An App Service Plan
    ![ResourceGroup Items](images/resourcegroup_items.png "Resource Group Items")
 
-1. Open the App Service blade
+1. Open the **App Service** blade
 
-1. In on the overview section copy the **Git clone url**
+1. In on the **Overview** section copy the **Git clone url**
    ![Git Clone URL](images/git_clone_url.png "GIT Clone URL")
 
 1. Now we need to configure the local git repository to know about the website. To do this we will add a new remote to the repository:
@@ -149,33 +148,32 @@ Before our WordPress website will work we need to populate the database with dat
 1. Open MySQL Workbench  
     ![Open MySQL Workbench](images/open-mysql-workbench.png)
 
-1. Click OK and ignore the unsupported operating system warning
+1. Click **OK** and ignore the unsupported operating system warning
 
-1. Click on the + icon to add a new MySQL Connection  
+1. Click on the **+ icon** to add a new MySQL Connection  
     ![Add new connection](images/add-mysql-connection.png)
 
-1. Setup the new connection to MySQL using the server name, username, and password [previously provisioned](1.ProvisionServer.md)
+1. Setup the new connection to MySQL using the server name, username, and password previously provisioned.
 
 1. Click on "Store in Vault..." to enter password, then click OK  
    ![Workbench DB Connection](images/wb_db_connection.png "Workbench DB Connection")
 
 1. Click on Test Connection to verify that you have configured the connection correctly. If you have issues check that you have provided the all of the details correctly. Once the test connection action succeeds click on OK
 
-1. Double click on the connection name to open a session against your MySQL database  
-   ![DB connection](images/wb_open_connection.png "DB connection")
+1. Double click on the connection name to open a session against your MySQL database.
 
 1. Choose **File > Run SQL Script**  
     ![Run SQL Script](images/mysql-run-script.png)
 
-1. Open the sql file from `C:\code\bikeshop\bikeshop.sql` and click the Run  
+1. Open the sql file from `C:\code\bikeshop\bikeshop.sql` and click the **Run**  
    ![Workbench run query](images/running_query_create_schema.png "Run Query in Workbench")
 
-1. Once the script has been executed the database schema "bikestore" will have been created, click the Close button
+1. Once the script has been executed the database schema "bikestore" will have been created, click the **Close** button
 
 1. Click the refresh icon to see it listed in the set of availble schema  
    ![Schema created](images/workbench_schema_created.png "DB Schema Created")
 
-1. Return to Azure portal and in the App Service blade click on the URL for the website  
+1. Return to Azure portal and in the **App Service** blade click on the URL for the website  
    ![Open website](images/appservices.png)
 
 1. The website should be up and running  
@@ -198,7 +196,7 @@ There are two options to scale up or scale down the Azure Database for MySQL ser
 1. Click **Pricing Tier** option  
     ![Pricing Tier](images/mysql-pricing-option.png)
 
-1. Change the **Compute Units** up or down as need and click OK to save changes.
+1. Change the **Compute Units** up or down as need and click **OK** to save changes.
     > Note that currently only the Basic level at either 50 or 100 compute units is available  
 
     ![Compute units](images/mysql-compute.png)
@@ -224,5 +222,5 @@ There are two options to scale up or scale down the Azure Database for MySQL ser
     <br>
     
 # CONCLUSION
-    <br>
+
 As a fully integrated service, Azure Database for MySQL plugs you into Microsoft’s global network of value-add services, datacenters, security features, and round-the-clock monitoring.  Azure Database for MySQL is designed to deliver highly available MySQL Compatibility at scale to the forefront, all backed by a best of class SLA.   Trust Azure to keep your enterprise-ready MySQL applications up and running.

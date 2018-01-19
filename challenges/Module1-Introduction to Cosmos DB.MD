@@ -19,7 +19,7 @@
     -	API : **SQL** 
     -	Resource group : Select **Use Existing** resource group. <br/>
     -   Location: East US
-    -   Enable geo-redundancy: No
+    -   Enable geo-redundancy: No <br/>
     Click on **Create**.<br/>
 <img src="images/cosmosdbinfo.jpg"/><br/>
 8.	After completion (5-10min) a notification will be raised as below.<br/>
@@ -48,12 +48,12 @@
 
 
 1.  Access PowerBI VM(Windows) via RDP, Open Internet Explorer inside the Windows VM and download the data which we would  migrate to cosmos DB by clicking [here](http://jsonstudio.com/wp-content/uploads/2014/02/stocks.zip) (http://bit.ly/cosmos-data) <br/>
-A zip file will download, extract and open the file to view the json data set.<br/>
-2.  **Launch** your **data migration tool** by opening the **dtui.exe** application. (under C:\Packages)<br/>
+A zip file will be downloaded, extract and open the file to view the json data set.<br/>
+2.  **Launch** your **data migration tool** by executing the **dtui.exe** application under C:\Packages\ directory <br/>
 <img src="images/migrationtool.jpg"/><br/>   
-3.  In the **DocumentDB Data Migration Tool** blade that appear, Click on **Next**.<br/>
+3.  In the **DocumentDB Data Migration Tool** wizard that appear, Click on **Next**.<br/>
 <img src="images/mig-toolWelcome.jpg"/><br/>   
-4.  In the source information page that appear, select Import from **JSON file(s)** and click on **Add Files**.<br/>
+4.  In the source information page, select Import from **JSON file(s)** and click on **Add Files**.<br/>
 <img src="images/SourceInfo.jpg"/><br/>   
 5.  Select the downloaded file, **stocks.json** and click on open.<br/>
 <img src="images/importfiles.jpg"/><br/>   
@@ -61,48 +61,49 @@ A zip file will download, extract and open the file to view the json data set.<b
 7.  **Launch** a browser and **navigate** to https://portal.azure.com. **Login** with your Microsoft Azure credentials.<br/>
 8.  Click on the **Resource Group** icon on the **Menu navigation bar**.<br/>
 <img src="images/rg.jpg"/><br/>
-9.  Now in the **Resource Groups** blade that appear, select the created resource group for cosmos DB, (i.e, **cosmosdb-rg**).<br/>
+9.  Now, in the **Resource Groups** blade, select the existing resource group for cosmos DB, (i.e, **cosmosdb-rg**).<br/>
 <img src="images/cosmosrg.jpg"/><br/>
-10.  Then click on the created **Azure Cosmos DB account(i.e,cosmosdb321)**.<br/>
+10.  Then click on the  **Azure Cosmos DB account(i.e,cosmosdb321)**.<br/>
 <img src="images/cosmosdb.jpg"/><br/>
-11.  In the **Azure Cosmos DB account** blade, Click on **keys** menu under the **setting** tile.<br/>
+11.  In the **Azure Cosmos DB account** blade, Click on **keys** menu under the **setting** .<br/>
 <img src="images/keys.jpg"/><br/>   
 12.  Then **copy** the **Primary Connection String** and paste the connection string in a notepad.<br/>
 <img src="images/connString.jpg"/><br/>
-13.  Now click on **Overview** menu in the **Azure Cosmos DB account** page and copy the newly created database name, i.e, mynewdb.<br/><img src="images/copyDBname.jpg"/><br/>
+13.  Now click on **Overview** menu in the **Azure Cosmos DB account** page and copy the newly created database name, i.e, **mynewdb**.<br/><img src="images/copyDBname.jpg"/><br/>
 14.  Now open the notepad and after the connection string add the text **Database=mynewdb**.<br/>
 <img src="images/notepad.jpg"/><br/>   
-15.  Then go back to the **Target information** page of the Data migration tool and provide the following details.<br/>
+15.  Then go back to the **Target information** page of the **Data migration tool** and provide the following details:<br/>
        - Export to: **DocumentDB-Bulk import(Single partition collections)**.<br/>
        - Connection String: Copy the entire text from the notepad and paste it here.<br/>
     <img src="images/targetinfodb.jpg"/><br/>   
-    After this Click on **Verify** button to verify the connection. Then a notification blade will pop-up which says **Successfully             connected to documentDB account**.In that notification blade click on **OK**. <br/>
+    After this Click on **Verify** button to verify the connection. Then a notification blade will pop-up which says **Successfully             connected to documentDB account**. In that notification blade click on **OK**. <br/>
     <img src="images/Notification.jpg"/><br/>   
        - Collections: Enter the name of the new collection, (i.e, **mynewcollection**).  
-    After this Click on **Add** button to add the collection.<br/>
+    And Click on **Add** button to add the collection.<br/>
     <img src="images/targetinfocollection.jpg"/><br/>    
-       - Collection throughput: Copy the collection **throughput** from the **overview** page of **Azure Cosmos DB account** and paste it here.<br/>
+       - Collection throughput: Copy the collection **throughput** from the **Overview** page of **Azure Cosmos DB account** and paste it here.<br/>
     Click on **Next** button.
     <img src="images/copythruput.jpg"/><br/>
     <img src="images/targetThruput.jpg"/><br/>
 16.  Then an **advanced** page will appear, in that click on **Next**.
      <img src="images/advancedPage.jpg"/><br/>
-17.  Then a Summary page will appear, in that click on **Import**.
+17.  Then a **Summary** page will appear, in that click on **Import**.
      <img src="images/importtodb.jpg"/><br/>
 18.  Now the import will start.It will take a couple of minutes to complete.
      <img src="images/exportStatus.jpg"/><br/>
+     Data is sucessfully imported.
 ### 1.4	Use Data Explorer to interact with Cosmos DB database
 #### 1.4.1	Verify Data in Azure Portal
 1.  **Launch** a browser and **navigate** to https://portal.azure.com. **Login** with your Microsoft Azure credentials.<br/>
 2.  Click on the **Resource Group** icon on the **Menu navigation bar**.<br/>
 <img src="images/rg.jpg"/><br/>
-3.  Now in the **Resource Groups** blade that appear, select the created resource group for cosmos DB, (i.e, **cosmosdb-rg**).<br/>
+3.  Now in the **Resource Groups** blade that appear, select the existing resource group for cosmos DB, (i.e, **cosmosdb-rg**).<br/>
 <img src="images/cosmosrg.jpg"/><br/>
-4.  Then click on the created **Azure Cosmos DB account(i.e,cosmosdb321)**.<br/>
+4.  Then click on the **Azure Cosmos DB account(i.e,cosmosdb321)**.<br/>
 <img src="images/cosmosdb.jpg"/><br/>
-5.  In the **Azure Cosmos DB account** blade that appear, Click on **Data Explorer**.<br/>
+5.  In the **Azure Cosmos DB account** blade, Click on **Data Explorer**.<br/>
 <img src="images/dataexplorer.jpg"/><br/>
-6.  In the **Data Explorer page**, Expand **mynewdb** to view the collections.<br/>
+6.  In the **Data Explorer page**, expand **mynewdb** to view the collections.<br/>
 <img src="images/expanddb.jpg"/><br/>
 7.  Then expand **mynewcollection**.<br/> 
 <img src="images/expandCollection.jpg"/><br/>  
@@ -111,16 +112,16 @@ A zip file will download, extract and open the file to view the json data set.<b
 9.  You can see the data by clicking the **IDs**.<br/>
 <img src="images/selectID.jpg"/><br/>  
 #### 1.4.2  Query data
-1.  In the **Azure Cosmos DB account** blade that appear, Click on **Query Explorer**.<br/>
+1.  In the **Azure Cosmos DB account** blade, Click on **Query Explorer**.<br/>
 <img src="images/queryexplorer.jpg"/><br/>
-2.  In the page that appear, select the our **Database(mynewdb)** and **Collection(mynewcollection)**.<br/>
+2.  In the page, select the **Database(mynewdb)** and **Collection(mynewcollection)**.<br/>
 <img src="images/QEslection.jpg"/><br/>
 3.  Now type your query based on the requirement in the provided space and click on **Run Query**.<br/>
 ```
 For example: SELECT * FROM c  WHERE c.Sector= "Financial"
 ```
 <img src="images/queryrun.jpg"/><br/>
-4.  Now we can see all the data with **Sector = Financial**<br/>
+4.  Now, we can see all the data with **Sector = Financial**<br/>
 <img src="images/query_op.jpg"/><br/>
 ### 2.  Distribute Data Globally
    > Replication protects your data and preserves your application up-time in the event of transient hardware failures. If your data is replicated to a second data center, it's protected from a catastrophic failure in the primary location.
@@ -128,18 +129,18 @@ For example: SELECT * FROM c  WHERE c.Sector= "Financial"
 #### 2.1   Enable Database Replication 
 1.  **Launch** a browser and **navigate** to https://portal.azure.com. **Login** with your Microsoft Azure credentials.<br/>
 2.  Select the **Azure Cosmos DB account(i.e,cosmosdb321)**.<br/>
-3.  In the Cosmos DB account page click on **Replicate data globally** tab under the **Settings** tile.<br/> 
+3.  In the Cosmos DB account page, click on **Replicate data globally** tab under the **Settings**.<br/> 
 <img src="images/replicate.jpg"/><br/>
-4.  In the new page that appear, click on **Add new region** under **Read regions**.<br/>
+4.  In the new page, click on **Add new region** under **Read regions**.<br/>
 <img src="images/addregion.jpg"/><br/>
-5.  Now select the required **region** (say Central US) from the list and click on **OK**.<br/> 
+5.  Now, select the required **region** (say Central US) from the list and click on **OK**.<br/> 
 <img src="images/regionok.jpg"/><br/>
-6.  If you want to add more regions, click on Add new region again and select the required region and click on **Save**.
+6.  If you want to add more regions, click on Add new region again and select the required region then click on **Save**.
 <img src="images/addregion2.jpg"/><br/>
 <img src="images/replicationsave.jpg"/><br/>
 
    > - You can distribute your data to any number of Azure regions, with the click of a button. This enables you to put your data where your users are, ensuring the lowest possible latency to your customers.  
-   > - Using Azure Cosmos DB's multi-homing APIs, the app always knows where the nearest region is and sends requests to the nearest data center. All of this is possible with no config changes. You set your write-region and as many read-regions as you want, and the rest is handled for you for more details click on given link [https://docs.microsoft.com/en-us/azure/cosmos-db/introduction](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction)
+   > - Using Azure Cosmos DB's multi-homing APIs, the app always knows where the nearest region is and sends requests to the nearest data center. All of this is possible with no config changes. You set your write-region and as many read-regions as you want, and the rest is handled for you. For more details click on below link </br> [https://docs.microsoft.com/en-us/azure/cosmos-db/introduction](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction)
    
  #### 2.2  Region Failover
  Cosmos DB supports both explicit and policy driven failovers that allow you to control the end-to-end system behavior in the event of failures.
@@ -154,7 +155,7 @@ For example: SELECT * FROM c  WHERE c.Sector= "Financial"
 
    > _Now let's see how to change priorities of preferred region list._
 
-1. Now you should be at the **Replicate data globally** section from the previous step. Then click on **Automatic Failover** menu present on the top of the page.
+1. Now, you should be at the **Replicate data globally** section from the previous step. Then click on **Automatic Failover** menu present on the top of the page.
 
    ![](images/automaticFailover.jpg)
 
@@ -174,7 +175,7 @@ For example: SELECT * FROM c  WHERE c.Sector= "Financial"
 1. In addition to **automatic failovers**, the current **write region** of a given Cosmos DB account can be manually changed dynamically to one of the existing **read regions**.
 1. Manual failovers ensure  **zero data loss**  and  **zero availability loss** and gracefully transfer write status from the old write region to the new one for the specified Cosmos DB account.
 1. Like in automatic failovers, the **Cosmos DB SDK** automatically handles write region changes during manual failovers and ensures that calls are automatically redirected to the new write region.
-1. Navigate to **Azure Portal's** **Resource groups** option present in the favourites menu on the left side panel and select the resource group **"<inject story-id="story://Content-Private/content/dfd/SP-GDA/gdaexpericence1/story_a_gda_using_cosmosdb" key="myResourceGroupName"/>**" and click on Azure Cosmos DB Account **"<inject story-id="story://Content-Private/content/dfd/SP-GDA/gdaexpericence1/story_a_gda_using_cosmosdb" key="cosmosDBWithSQLDBName"/>"**.
+1. Navigate to **Azure Portal's** **Resource groups** option present in the favourites menu on the left side panel and select the resource group and click on Azure Cosmos DB Account .
 1. Click on **Replicate data globally** option present under **Cosmos DB Account** blade. Then click on **Manual Failover** menu present on the top of page.
 
    ![](images/ManualFailover.jpg)
@@ -190,12 +191,11 @@ For example: SELECT * FROM c  WHERE c.Sector= "Financial"
  
 ### 3.  Cosmos DB Data Analysis with Cosmos 
 #### 3.1 Add Cosmos DB as data Source
-1. Access Windows VM and Run **Power BI Desktop** application available on desktop.
-2. Once Power BI Desktop is launched, a Welcome screen is displayed. Provide the information and Click on **Done**.
+1. Access Windows VM and run **Power BI Desktop** application available on desktop.
+2. Once **Power BI Desktop** is launched, a Welcome screen is displayed. Provide the information and Click on **Done**.
 <img src="images/welcomepage.jpg"/><br/>
 3. The Report view of Power BI Desktop is displayed. Select the **Home** ribbon, then click on **Get Data**. The Get Data window should appear.
-<img src="images/reportview.jpg"/><br/>
-4. **Click** on Azure, select Azure Cosmos DB (Beta), and then click **Connect**. 
+4. **Click** on Azure, select **Azure Cosmos DB (Beta)**, and then click **Connect**. 
 <img src="images/getdata.jpg"/><br/>
 5. On the Preview Connector page, click **Continue**. The Azure Cosmos DB Connect window appears.
 <img src="images/connector.jpg"/><br/>
@@ -207,26 +207,26 @@ For example: SELECT * FROM c  WHERE c.Sector= "Financial"
 <img src="images/cosmoskeyandurl.jpg"/><br/>
 8. If you are connecting to this endpoint for the first time, you are prompted for the account key. For your own account, retrieve the key from the Primary Key box in the Read-only Keys blade of the Azure portal.
 <img src="images/accountkey.jpg"/><br/>
-9. When the account is successfully connected, the Navigator will appear. The **Navigator** will show a list of databases under the account.
+9. When the account is successfully connected, the **Navigator** will appear. The **Navigator** will show a list of databases under the account.
 <img src="images/navigatorsimple.jpg"/><br/>
-10. **Click** and expand on the database where the data for the report will come from, select **mynewdb**. 
-11. Now, select a collection that you will retrieve the data from. Here, we select **mynewcollection** created in above stop.
-    The Preview pane shows a list of Record items. A Document is represented as a Record type in Power BI. Similarly, a nested       JSON block inside a document is also a Record.
+10. Click and expand on the database where the data for the report will come from, select **mynewdb**. 
+11. Now, select a collection that you will retrieve the data from. Here, we select **mynewcollection** created in above step.
+    The Preview pane shows a list of Record items. A **Document** is represented as a Record type in Power BI. Similarly, a nested       JSON block inside a document is also a Record.
     <img src="images/navigator.jpg"/><br/>
-12. **Click** Edit to launch the Query Editor in a new window to transform the data.
+12. Click **Edit** to launch the **Query Editor** in a new window to transform the data.
 #### 3.2 Flattening, transforming JSON documents and developing dashboards
-1. Switch to the Power BI Query Editor window, where the Document column in the center pane. 
+1. Switch to the Power BI Query Editor window where you will see the Document column in the center pane. 
 <img src="images/queryeditor.jpg"/><br/>
-2. **Click** on the expander at the right side of the Document column header. The context menu with a list of fields will appear. Select the fields you need for your report, for instance, id, Ticker, Profit Margin, Institutional Owership, Sector, Shares Outstanding and then click **OK**.<br/>
+2. Click on the expander at the right side of the Document column header. The context menu with a list of fields will appear. Select the fields you need for your report, for instance, id, Ticker, Profit Margin, Institutional Owership, Sector, Shares Outstanding and then click **OK**.<br/>
 <img src="images/selectrecord.jpg"/><br/>
 3. The center pane will display a preview of the result with the fields selected.
 <img src="images/records.jpg"/><br/>
-4. **Click** Close and Apply to save the data model.
+4. Click **Close and Apply** to save the data model.
 5. The following shows the basic steps of creating a simple interactive Pie Chart view report.
-* For our example, we will create a pie chart view showing the document sector and the count of Shares Outstanding for each sector. In the Visualizations pane, click on the pie chart visual type as highlighted in the screenshot above.
+   - For our example, we will create a pie chart view showing the document sector and the count of Shares Outstanding for each sector. In the Visualizations pane, click on the pie chart visual type as highlighted in the screenshot above.
 <img src="images/piechart.jpg"/><br/>
-* Now, drag and drop the column on the right side "Document.Shares Outstanding" field from the Fields pane to the Values   Visualizations pane.
-* Next, drag and drop the Document.Sector field to the Filters property.
-* You should now see the Pie Chart showing different sectors in relational to the Count of Shares Outstanding values.
+   - Now, drag and drop the column on the right side "Document.Shares Outstanding" field from the Fields pane to the Values   Visualizations pane.
+   - Next, drag and drop the Document.Sector field to the Filters property.
+   - You should now see the Pie Chart showing different sectors in relational to the Count of Shares Outstanding values.
 <img src="images/piechart1.jpg"/><br/>
-* You now have created a basic report. You can further customize the report by adding more visualizations.
+   - You now have created a basic report. You can further customize the report by adding more visualizations.
