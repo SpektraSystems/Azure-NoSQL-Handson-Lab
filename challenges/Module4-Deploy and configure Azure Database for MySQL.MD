@@ -71,6 +71,8 @@ az mysql server firewall-rule create --resource-group [MyResourceGroupName] --se
 
 We now need to change some configuration code for the WordPress website so that it is able to consume data from the database which we have just provisioned. Once we have updated the code we'll deploy it to an Azure App Service which has already been provisioned.<br/>
 
+     Note: Go to http://www.github.com and create an account if you do not have one already
+
 1. First we need to acquire a copy of the code for the website. To do this we will clone it from an existing GitHub repository. In the open PowerShell command prompt run the following commands one by one:<br/>
 ```
     cd \  
