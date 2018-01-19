@@ -341,7 +341,7 @@ In this we will create Azure Function App.<br/>
 17. You will get navigated to function and will find **</> Get function URL** link in the top right corner of the page. Click on the link <img src="images/getFunctn.jpg"/><br/>
 18. On clicking **</> Get function URL** you will get a popup window with a URL.<br/>
  <img src="images/getfxnurl.jpg"/><br/>
-19. Click on **Copy** ![](img/Copy.jpg) icon to copy the given URL and paste it against **AZURE\_FUNCTION\_DEALS\_URL:** variable in **config.js file** opened in **Visual Studio 2017** IDE and save the file.
+19. Click on **Copy** ![](img/Copy.jpg) icon to copy the given URL and paste it against **AZURE\_FUNCTION\_DEALS\_URL:** variable in **config.js file** opened in **Visual Studio Code** IDE and save the file.
 
    > _Awesome, you have created Azure Function for Deals data and integrated with Cosmos DB._
 
