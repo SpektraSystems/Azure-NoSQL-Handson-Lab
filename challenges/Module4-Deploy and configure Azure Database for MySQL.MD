@@ -4,7 +4,7 @@
 * Please use  PowerBI-VM to execute this lab.
 
 * Throughout this hands on lab there are many cli commands given. Some of these contain values that are listed with like this [vaule], in instances where this square bracket notation is used you must provide an apropriate value.
-<br>
+
 
 ### Provision the Azure Resources 
 
