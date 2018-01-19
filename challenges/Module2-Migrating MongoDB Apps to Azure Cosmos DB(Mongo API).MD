@@ -2,12 +2,12 @@
 ## Scenario 1: Understand the Flight Reservation App, Local MongoDB and test Application
 ### Understand Flight reservation application 
 #### Access Jump VM 
-1. From azure portal, go to virtual machine and select the JumpVM. In Overview section, click on **Connect** button. It will show username with IP address copy that IP address.<br/>
+1. From azure portal, go to virtual machine and select the JumpVM. In **Overview** section, click on **Connect** button. It will show username with IP address copy that IP address.<br/>
 <img src="images/jumpvm1.jpg"/><br/>
 1. Click on start button and search for **Remote Desktop Connection** and click on it.<br/>
 1. Remote Desktop Connection window will pop-up in that provide the IP Address that you copied in above step.<br/>
 <img src="images/rdc.jpg"/><br/>
-1. Click on **Yes** button in Remote Desktop Connection Wizard.<br/>
+1. Click on **Yes** button in **Remote Desktop Connection Wizard**.<br/>
 <img src="images/rdc2.jpg"/><br/>
 1. Enter the credentials provided in the mail to connect to VM.<br/>
 <img src="images/xrdp.jpg"/><br/>
@@ -16,20 +16,20 @@
 
 #### Launch VS Code and understand application components and hierarchy 
 
-1. Once you are logged in the Ubuntu OS click on Application for accessing visual studio code as shown blow.<br/>
+1. Once you are logged in the Ubuntu OS, click on Application for accessing visual studio code as shown below.<br/>
 <img src="images/jumpvm2.jpg"/><br/>
-1. VS Code should have src folder already opened, Notice the folders hierarchy<br/>
+1. VS Code should have src folder already opened, notice the folders hierarchy<br/>
 <img src="images/projects.png"/><br/>
 1. ContosoAir application is 3-tiered application, One frontend application built on AngularJS named **ContosoAir.Website** and API application named **ContosoAir.Services** build with NodeJS and a data backend running on MongoDB.<br/>
-1. All connectivity information required for the API application is maintained in **config.js**, As shown below.<br/>
+1. All connectivity information required for the API application is maintained in **config.js**, as shown below.<br/>
 <img src="images/configjs.png"/><br/>
-1. Following is the file system location for application binaries /home/CosmosDB-Hackfest/ContosoAir/src/.<br/>
+1. Following is the file system location for application binaries **/home/CosmosDB-Hackfest/ContosoAir/src/**.<br/>
 <img src="images/fsbrowse.png"/><br/>
 #### Access Local MongoDB and Verify Collections
 
 1. Open the **Terminal**, then start the mongodb Service by running **sudo service mongod start** and  verify the mongoDB database while running the **mongo** as shown below.<br/>
 <img src="images/mongo.jpg"/><br/>
-1. You can also verify the records in mongoDB database while running the following commands. Copy the db_name(contosoairdb3) for future use. Note down that there are 5 collections used by the Application.<br/>
+1. You can also verify the records in mongoDB database while running the following commands. Copy the db_name(contosoairdb3) for future use. Note down that there are 5 collections used by the application.<br/>
 ```bash
 show dbs 
 use <db_name>
@@ -39,11 +39,11 @@ show collections
 
 #### Execute and Test the Application Locally
 
-1. To start the ContosoAir app service layer, go to /home/CosmosDB-Hackfest/ContosoAir/src/ContosoAir.Services in file system, right click and select **Open Terimal Here** as shown below.<br/>
+1. To start the ContosoAir app service layer, go to **/home/CosmosDB-Hackfest/ContosoAir/src/ContosoAir.Services** in file system, right click and select **Open Terimal Here** as shown below.<br/>
 <img src="images/jumpvm4.jpg"/><br/>
-1. **Open** the **Terminal** and run **npm start** command. Application should start, Incase of any errors make sure you're in right directory as instructed in previous step. Minimize the terminal once command is executed, do not exit or CTRL+C.<br/>
+1. **Open** the **Terminal** and run **npm start** command. Application should start, incase of any errors make sure you're in right directory as instructed in previous step. Minimize the terminal once command is executed, do not exit or CTRL+C.<br/>
 <img src="images/jumpvm5.jpg"/><br/>
-1. Now, to start the ContosoAir Website layer, go to /home/CosmosDB-Hackfest/ContosoAir/src/ContosoAir.Website. Open terminal from there and run **ng serve** command in terminal. Minimize the terminal once command is executed, do not exit or CTRL+C.<br/>
+1. Now, to start the ContosoAir Website layer, go to **/home/CosmosDB-Hackfest/ContosoAir/src/ContosoAir.Website**. Open terminal from there and run **ng serve** command in terminal. Minimize the terminal once command is executed, do not exit or CTRL+C.<br/>
 <img src="images/jumpvm6.jpg"/><br/>
 
     > Note This  may take upto a minute to start this website. 
@@ -54,29 +54,29 @@ show collections
 1. Once you get login, you will be redirected to **ContosoAir app**.<br/>
 <img src="images/contoso1.jpg"/><br/>
 1. Enter **Departure date** and **Return date** in **YYYY-MM-DD** format and click **Find Flights** button.<br/>
-<img src="images/contoso2.jpg"/><br/>
+<img src="images/contoso2.jpg"/><br/> Check the time taken to fetch flight records.
  
 ## Scenario 2: Migrate Application data to Cosmos DB
 
 ### Create Cosmos DB with Mongo API
-1. Open **Azure Portal** with your credential, open the resource group which is already created and click on **Add** button.<br/>
+1. Open **Azure Portal** with your credential, open the existing resource group and click on **Add** button.<br/>
 <img src="images/addcosmos.jpg"/><br/>
 1. Search for Azure Cosmos DB and Select it from results.<br/>
 <img src="images/cosmos1.jpg"/><br/>
 1. Click on **Create** button.<br/>
 <img src="images/cosmos2.jpg"/><br/>
 1. Populate the below parameters as shown below.<br/>
-* **ID**:(any valid name)
-* **API**: select **Mongo DB** from the dropdown.
-* **Resource Group**: Choose **use existing** Resource Group.<br/>
+ * **ID**:(any valid name)
+ * **API**: select **Mongo DB** from the dropdown.
+ * **Resource Group**: Choose **use existing** Resource Group.<br/>
  Click on **Create**.<br/>
 <img src="images/cosmosdb1.jpg"/><br/>
 5. After deployment gets completed, click on **Go to resource** to verify that resource is successfully deployed.<br/>
 <img src="images/cosmosdb2.jpg"/><br/>
-6. **Go to Connection String** and Copy all the parameters (Host, Port, Username, Password, Primary Connection String) in notepad for future use.<br/>
+6. **Go to Connection String** and Copy all the parameters **(Host, Port, Username, Password, Primary Connection String)** in notepad for future use.<br/>
 <img src="images/cosmosdb3.jpg"/><br/>
 ### Migrate Database to Azure Cosmos DB
-In this exercise, We will use mongoexport to export the data from MongoDB running locally in the jump-VM and then we will use mongoimport to insert this dataset into newly created Cosmos DB.<br/>
+In this exercise, We will use mongoexport to export the data from MongoDB running locally in the jump-VM and then we will use **mongoimport** to insert this dataset into newly created Cosmos DB.<br/>
 1. Open **Terminal** on Jump VM in which you run the **mongo** command, (Alternatively you can also access Jump VM on SSH by any ssh tool such as Putty), for verifying the MongoD Service is running. Issue following commands to export the each collection in the mongo db database to a local bkp file.<br/>
 
 ```bash
@@ -110,7 +110,7 @@ mongoimport --host <HOST>:<PORT> -u <USERNAME> -p <PASSWORD> --ssl --sslAllowInv
 
 ### Update Application to use Cosmos DB 
 
-1. Go back to Visual Studio Code IDE in JumpVM and navigate to the config.js file under ContosoAir.Services and paste the **HOST** value against **DOCUMENT_DB_ENDPOINT**, **PRIMARY KEY** against **DOCUMENT_DB_PRIMARYKEY**, **DOCUMENT_DB_DATABASE** as **contosoairdb3** and **Primary Connection String** Against **MONGO_DB_CONNECTION_STRING** and add database name (contosoairdb3) before question mark in connection string.
+1. Go back to Visual Studio Code IDE in JumpVM and navigate to the config.js file under ContosoAir.Services and paste the **HOST** value against **DOCUMENT_DB_ENDPOINT**, **PRIMARY KEY** against **DOCUMENT_DB_PRIMARYKEY**, **DOCUMENT_DB_DATABASE** as **contosoairdb3** and **Primary Connection String** against **MONGO_DB_CONNECTION_STRING** and add database name (contosoairdb3) before question mark in connection string.
 it should look something like below:
 
 ```bash
@@ -122,12 +122,12 @@ mongodb://cosmosdb12345:vMTETikja355VZjnJQGC3gwdLaR8xjNlpUq65loZVd4pLvmlG9PB25eq
 3. Copy the **WRITE REGION** and paste it against **DOCUMENT_DB_PREFERRED_REGION** key in **config.js** file which is already opened in Visual Studio Code IDE and save this file.<br/>
 <img src="images/config.jpg"/><br/>
 
-4. Open the terminal window already running with **npm start** for Services application, Exit the application by pressing CTRL+C and start the application again by running **npm start**.<br/>
+4. Open the terminal window already running with **npm start** for Services application, exit the application by pressing CTRL+C and start the application again by running **npm start**.<br/>
 <img src="images/jumpvm4.jpg"/><br/>
 <img src="images/jumpvm5.jpg"/><br/>
 
 5. ContosoAir Website should be running already in other terminal window, You can leave it running as is(No need to stop and restart).
-if not running, you can manually start it to by going to /home/CosmosDB-Hackfest/ContosoAir/src/ContosoAir.Website. Open terminal from there and run **np serve** command in terminal.<br/>
+if not running, you can manually start it to by going to **/home/CosmosDB-Hackfest/ContosoAir/src/ContosoAir.Website**. Open terminal from there and run **np serve** command in terminal.<br/>
 <img src="images/jumpvm6.jpg"/><br/>
 6. Copy the **localhost URL** [http://localhost:4200](http://localhost:4200) from the **here** and paste it in **Mozilla firefox** browser and press enter.<br/>
 
@@ -163,11 +163,11 @@ You should notice that latency is now changed when loading the flight data
 **Configure FlightsCollection data to leverage the Partitions**
 
 1. In this exercise, we'll create another collection named **FlightsCollectionPartitioned** in existing **contosoairdb3** with number of **Stops** as the partition key.
-1. Open Azure Portal and access the Cosmos DB account created earlier, Go to **Browse** in settings blade.
+1. Open Azure Portal and access the Cosmos DB account created earlier, Go to **Browse** under Collections .
 
     ![](images/createcollection.jpg)
 
-1. Click on **Add Collection** Button, Scroll horizontally to see the full dialogue box. Enter **contosoairdb3** as the **Database Id** and **FlightsCollectionPartitioned** as **collection Id**. Enter **stop** as **Shared key**, leave all other settings as default.
+1. Click on **Add Collection** Button, Scroll horizontally to see the full dialog box. Enter **contosoairdb3** as the **Database Id** and **FlightsCollectionPartitioned** as **collection Id**. Enter **stop** as **Shared key**, leave all other settings as default.
 
    ![](images/createnewcollection.jpg)
 
@@ -185,9 +185,7 @@ replace with newly created collection with partitioning
 6. Data is now inserted, let's go to Azure portal to verify, Go to **Browse** in settings blade of Cosmos DB Account.
 
 7. You'll see that under documents, there's another column named **stop** along with **id**. Click on **Scale and settings** to verify the partition. 
-
     ![](images/scalesettings.jpg)
-  
 8. In order to test the application, exit the terminal running **npm start** for the application and start it again.
 
 > Awesome! In this scenario, you learned the Partitioning feature of  Azure Cosmos DB.
@@ -197,9 +195,9 @@ replace with newly created collection with partitioning
 
  > Replication protects your data and preserves your application up-time in the event of transient hardware failures. If your data is replicated to a second data center, it's protected from a catastrophic failure in the primary location.
 
-   > Replication ensures that your storage account meets the  [Service-Level Agreement (SLA) for Storage](https://azure.microsoft.com/support/legal/sla/storage) even in the face of failures. See the SLA for information about Azure Storage guarantees for durability and availability.
+   > Replication ensures that your storage account meets the  [Service-Level Agreement (SLA) for Storage](https://azure.microsoft.com/support/legal/sla/storage) even in the case of failures. See the SLA for information about Azure Storage guarantees for durability and availability.
 
-   > _To test the above scenario, _lets replicate the database into multiple regions. Below is the procedure for the same._
+   > To test the above scenario, _lets replicate the database into multiple regions. Below is the procedure for the same._
    
 ### Replicate data globally   
 1.  **Launch** a browser and **navigate** to https://portal.azure.com. **Login** with your Microsoft Azure credentials.<br/>
@@ -230,7 +228,7 @@ CosmosDB with MongoAPI supports same read preference available in NodeJS Mongo l
 * **ReadPreference.SECONDARY_PREFERRED**: Read from a secondary if available, otherwise read from the primary.
 * **ReadPreference.NEAREST**: All modes read from among the nearest candidates, but unlike other modes, NEAREST will include both the primary and all secondaries in the random selection. The name NEAREST is chosen to emphasize its use, when latency is most important. For I/O-bound users who want to distribute reads across all members evenly regardless of ping time, set secondaryAcceptableLatencyMS very high. See “Ping Times” below. A strategy must be enabled on the ReplSet instance to use NEAREST as it requires intermittent setTimeout events, see Db class documentation.
 
-Additionally you can now use tags with all the read preferences to actively choose specific sets of regions in a globally distributed Cosmos DB. For example, if you wanto use West US as read region, you can specify this tag  { region: ‘West US’, size: ‘large’ } with read preferences.
+Additionally, you can now use tags with all the read preferences to actively choose specific sets of regions in a globally distributed Cosmos DB. For example, if you wanto use West US as read region, you can specify this tag  { region: ‘West US’, size: ‘large’ } with read preferences.
 ### Connect Application to Secondary region
 
 Now let's update the application to use secondary region as read region and experience the latency differene used earlier.
@@ -243,14 +241,14 @@ Now let's update the application to use secondary region as read region and expe
   <img src="images/openflightscs.png"/><br/>
 1. Scroll down and comment the line number 66 by adding **//** in front of line . This will disable default mode of quering  flights data from primary region.
   <img src="images/line66.png"/><br/>
-1. Uncomment line #68 . If you look closely this line is specifying the readpreference to query data against. 
+1. Uncomment line #68 . If you look closely this line is specifying the read preference to query data against. 
    <img src="images/line68.png"/><br/>
 1. Save both **config.js** and **flights.controller.js** files. 
 1. Open the **Terminal** window already running with **npm start** for Services application, Exit the application by pressing CTRL+C and start the application again by running **npm start**.<br/>
    <img src="images/jumpvm4.jpg"/><br/>
    <img src="images/jumpvm5.jpg"/><br/>
-1. ContosoAir Website should be running already in other terminal window, you can leave it running as is(No need to stop and restart).
-if not running, you can manually start it to by going to /home/CosmosDB-Hackfest/ContosoAir/src/ContosoAir.Website. Open terminal from there and run **np serve** command in terminal.<br/>
+1. ContosoAir Website should be running already in other terminal window, you can leave it running as is (No need to stop and restart).
+if not running, you can manually start it to by going to **/home/CosmosDB-Hackfest/ContosoAir/src/ContosoAir.Website**. Open terminal from there and run **np serve** command in terminal.<br/>
    <img src="images/jumpvm6.jpg"/><br/>
 1. Copy the **localhost URL** [http://localhost:4200](http://localhost:4200) from **here** and paste it in **Mozilla firefox** browser and press enter.<br/>
 1. If you see login page, Login with your Microsoft account(live-id) or move to next step.<br/>
@@ -264,20 +262,20 @@ You should notice that latency is now changed when loading the flight data in co
 ## Scenario 5: Integration with Azure Functions
 
 ### Create an Azure Function App
-In this we will create Azure Function App.<br/>
+In this, we will create Azure Function App.<br/>
 1. **Login** to **Azure portal** with your credentials and Click on **+New**.<br/>
 2. Search for **Function App**.<br/>
 <img src="images/fuctionappsearch.jpg"/><br/>
 3. **Click** on **Create**.<br/>
 <img src="images/fnxcreate.jpg"/><br/>
 4. Provide the parameters to create Function App as defined below.<br/>
-*	**App Name**: Your unique name to identify the application
-*	**Subscription**: Leave default
-*	**Resource Group**: Choose Use Existing and select your available resource group
-*	**OS**: Windows
-*	**Hosting Plan**: Consumption Plan
-*	**Location**: Location of your RG
-*	**Storage**: Click on **Create new**<br/>
+*	App Name: Your unique name to identify the application
+*	Subscription: Leave default
+*	Resource Group: Choose Use Existing and select your available resource group
+*	OS: Windows
+*	Hosting Plan: Consumption Plan
+*	Location: Location of your RG
+*	Storage: Click on **Create new**<br/>
     Click on **Create**.<br/>
     <img src="images/fnxinfo.jpg"/><br/>
 5. Click on **Go to Resource** Once provisioning is completed.<br/>
@@ -287,8 +285,8 @@ In this we will create Azure Function App.<br/>
 
   > _Let's create an Azure Function to retrieve data of flight deals._
 
-1. Go to **Resource groups** option present in the favourites menu on the left side panel and select the resource group **<inject story-id="story://Content-Private/content/dfd/SP-GDA/gdaexpericence1/story_a_gda_using_cosmosdb" key="myResourceGroupName"/>** and click on Azure Function named **<inject story-id="story://Content-Private/content/dfd/SP-GDA/gdaexpericence1/story_a_gda_using_cosmosdb" key="azureFunctionName"/>**.<br/>
-2. However over the **Functions** under **Functions Apps** and click on **+ sign** besides **Functions**.<br/>
+1. Go to **Resource groups** option present in the favourites menu on the left side panel and select the resource group and click on Azure Function.<br/>
+2. However, over the **Functions** under **Functions Apps** and click on **+ sign** besides **Functions**.<br/>
 3. Now, click on the **Custom function** link present at the bottom of the page.<br/>
 <img src="images/GetStartedOnYourOwn.jpg"/><br/>
 4. Click on **C#** template available in **HTTP trigger** section and name the function as "**FetchDealsData**" in **Name** textbox and click **Create** button.<br/>
@@ -312,8 +310,8 @@ In this we will create Azure Function App.<br/>
 7. Now, click on the **Integrate** option listed in **"FetchDealsData"** function in the **Function Apps** blade.<br/>
 8. Under **Inputs** section, click on **+ New Input** and select **Azure Cosmos DB** then click **Select** button at the bottom of page.<br/>
 <img src="images/inputs.jpg"/><br/>
-8. Enter **Document parameter name** as **SelectDealsData**, **Database name** as **contosoairdb3** and **Collection name** as **DealsCollection** in respective textboxes.<br/>
-9. Copy the **SQL query** given below and paste it into **SQL Query (optional)** textbox.<br/>
+9. Enter **Document parameter name** as **SelectDealsData**, **Database name** as **contosoairdb3** and **Collection name** as **DealsCollection** in respective textboxes.<br/>
+10. Copy the **SQL query** given below and paste it into **SQL Query (optional)** textbox.<br/>
 
     ```sql
    select c.id, c.fromName, c.fromCode, c.toName, c.toCode, c.price, c.departTime, c.arrivalTime, c.hours, c.stops, c.since from c
@@ -323,25 +321,25 @@ In this we will create Azure Function App.<br/>
 
     ![](image/SqlQuery.jpg)
     
-10. To enter **Cosmos DB account connection,** click on the **new** link given beside **Cosmos DB account connection** textbox.<br/>
+11. To enter **Cosmos DB account connection,** click on the **new** link given beside **Cosmos DB account connection** textbox.<br/>
 <img src="images/Integrate.jpg"/><br/>
-11. You will be redirected to **Cosmos DB Account blade**, select the **MongoDB DB Account** as shown below.<br/>
+12. You will be redirected to **Cosmos DB Account blade**, select the **MongoDB DB Account** as shown below.<br/>
 <img src="images/selectmongodocdb.jpg"/><br/>
-12. Now, go to **FetchDealsData** and click on **Save** button ![](img/save.jpg) button.<br/>
-13. To check whether the function is integrated, click on **FetchDealsData** function present under **AureFunctionForDeals** function app blade and click on **Test** option present at the right most corner.<br/>
+13. Now, go to **FetchDealsData** and click on **Save** button ![](img/save.jpg) button.<br/>
+14. To check whether the function is integrated, click on **FetchDealsData** function present under **AureFunctionForDeals** function app blade and click on **Test** option present at the right most corner.<br/>
 <img src="images/file2.jpg"/><br/>
-14. Select **HTTP method** as **GET** from the dropdown. Then click **Run** button at the bottom.
+15. Select **HTTP method** as **GET** from the dropdown. Then click **Run** button at the bottom.
 <img src="images/runfxn.jpg"/><br/>
-15. Status **200 Ok** will be displayed once the test is completed which signifies that the function is integrated successfully.<br/>
+16. Status **200 Ok** will be displayed once the test is completed which signifies that the function is integrated successfully.<br/>
 <img src="images/status200.jpg"/><br/>
 
    > _Here you go! You have successfully created Azure Function to_ _retrieve flight deals_ _data from_ **Cosmos DB**_._
 
-16. In the **Functions Apps** blade, click on **FetchDealsData**.<br/>
-17. You will get navigated to function and will find **</> Get function URL** link in the top right corner of the page. Click on the link <img src="images/getFunctn.jpg"/><br/>
-18. On clicking **</> Get function URL** you will get a popup window with a URL.<br/>
+17. In the **Functions Apps** blade, click on **FetchDealsData**.<br/>
+18. You will get navigated to function and will find **</> Get function URL** link in the top right corner of the page. Click on the link <img src="images/getFunctn.jpg"/><br/>
+19. On clicking **</> Get function URL** you will get a popup window with a URL.<br/>
  <img src="images/getfxnurl.jpg"/><br/>
-19. Click on **Copy** ![](img/Copy.jpg) icon to copy the given URL and paste it against **AZURE\_FUNCTION\_DEALS\_URL:** variable in **config.js file** opened in **Visual Studio 2017** IDE and save the file.
+20. Click on **Copy** ![](img/Copy.jpg) icon to copy the given URL and paste it against **AZURE\_FUNCTION\_DEALS\_URL:** variable in **config.js file** opened in **Visual Studio 2017** IDE and save the file.
 
    > _Awesome, you have created Azure Function for Deals data and integrated with Cosmos DB._
 
@@ -449,7 +447,7 @@ By default, an Azure Cosmos DB database account is accessible from public intern
 
    ![](https://docs.microsoft.com/en-us/azure/cosmos-db/media/firewall-support/azure-portal-firewall-configure.png)
    
-As a part of Lab, You may want to restrict access to your Database from the Linux VM where application is running and from Windows VM where PowerBI is running.
+As a part of Lab, you may want to restrict access to your Database from the Linux VM where application is running and from Windows VM where PowerBI is running.
 
 
 ## Scale MongoDB Collections in Azure Cosmos DB
@@ -457,9 +455,7 @@ As a part of Lab, You may want to restrict access to your Database from the Linu
 Azure Cosmos DB allows you to scale the throughput of a collection by just a couple of clicks.In order to scale up and down the throughput of a Cosmos DB collection, navigate to the Azure Cosmos DB account page and click on Scale.
 
 Here you should see the current throughput and options to increase/decrease the throughput. You can make the necessary changes and Click **Save**.
-
-    ![](images/scalethroughput.png)
-
+<img src="images/scalethroughput.png"/><br/>
 
 ## Understanding Cosmos DB Backup and restore functionality.
 
