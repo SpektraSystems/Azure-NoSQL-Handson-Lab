@@ -18,7 +18,7 @@
     -	ID : Provide any unique name.
     -	API : **SQL** 
     -	Resource group : Select **Use Existing** resource group. <br/>
-    -   Location: East US
+    -   Location: Canada East, or Canada Central (this should automatically fill when you choose resource group, leave as is)
     -   Enable geo-redundancy: No
     Click on **Create**.<br/>
 <img src="images/cosmosdbinfo.jpg"/><br/>
