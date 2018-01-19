@@ -20,15 +20,15 @@ Throughout this hands on lab there are many cli commands given. Some of these co
 
 [Azure Database for MySQL](#azure-database-for-mysq)
 
-Scenario 1: Provision Azure Database for MySQL
+[Scenario 1: Provision Azure Database for MySQL](#provision-mysql-server)
 
-Scenario 2: Deplopy website code
+[Scenario 2: Deplopy website code](#deploy-the-website)
 
-Scenario 3: Popluate MySQL with data
+[Scenario 3: Popluate MySQL with data](#populate-data)
 
-Scenario 4: Scale up
+[Scenario 4: Scale up](#scale-sp-azure-database-for-mysql)
 
-Conclusion
+[Conclusion](#conclusion)
 
 
 # Azure Database for MySQL
