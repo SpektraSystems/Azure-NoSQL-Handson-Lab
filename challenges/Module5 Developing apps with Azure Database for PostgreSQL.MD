@@ -15,7 +15,7 @@ Throughout this lab, we will use the **Azure Command Line Interface** or Azure C
 2. In the **Email or phone** field, enter <span style="color:blue">**<inject key="AzureAdUserEmail" />**.
 3. In the **Password** field, enter <span style="color:blue">**<inject key="AzureAdUserPassword" />**.
 4. Click **Sign in**.
-5. You _may_ encounter a popup entitled **Welcome to Microsoft Azure** with buttons for **Start Tour** and **Maybe Later** - Choose **Maybe Later**.
+5. You may encounter a popup entitled **Welcome to Microsoft Azure** with buttons for **Start Tour** and **Maybe Later**. Choose **Maybe Later**.
 
 **Initialize the Azure CLI** 
 
@@ -26,7 +26,7 @@ Throughout this lab, we will use the **Azure Command Line Interface** or Azure C
     > The button launches an interactive shell that you can use to run all of the steps required to create and manage an Ubuntu Linux VM.
 
 2. Once the shell launches, you will see **"Welcome to Azure Cloud Shell"**.  Click on the **Bash (Linux)** option at the bottom
-![Create Storage](images/cli-storage.png)   
+![Create Storage](images/cli-storage.PNG)   
 
 3. In the **"You have no storage mounted"** tab, click **Show Advanced Settings**.
 4. In the **Advanced Settings** tab, use the existing **Resource Group** and enter a unique name for the **Storage Account** and **File Share**.
