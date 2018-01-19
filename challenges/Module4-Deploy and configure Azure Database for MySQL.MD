@@ -162,46 +162,48 @@ Before our WordPress website will work we need to populate the database with dat
 
 ![Open MySQL Workbench](images/open-mysql-workbench.png)
 
-1. Click **OK** and ignore the unsupported operating system warning.<br/><br/>
+2. Click **OK** and ignore the unsupported operating system warning.<br/><br/>
 
-1. Click on the **+** icon to add a new MySQL Connection.<br/>
+3. Click on the **+** icon to add a new MySQL Connection.<br/>
 
 ![Add new connection](images/add-mysql-connection.png)
 
-1. Setup the new connection to MySQL using the server name, username, and password. [previously provisioned](1.ProvisionServer.md)
+4. Setup the new connection to MySQL using the server name, username, and password. [previously provisioned](1.ProvisionServer.md)
 
-1. Click on **"Store in Vault..."** to enter password, then click OK.<br/>
+5. Click on **"Store in Vault..."** to enter password, then click OK.<br/>
 
 ![Workbench DB Connection](images/wb_db_connection.png "Workbench DB Connection")
 
-1. Click on **Test Connection** to verify that you have configured the connection correctly. If you have issues check that you have provided the all of the details correctly. Once the test connection action succeeds click on **OK**.<br/>
+6. Click on **Test Connection** to verify that you have configured the connection correctly. If you have issues check that you have provided the all of the details correctly. Once the test connection action succeeds click on **OK**.<br/>
 
-1. Double click on the **connection name** to open a session against your MySQL database.<br/>
+7. Double click on the **connection name** to open a session against your MySQL database.<br/>
 
 ![DB connection](images/wb_open_connection.png "DB connection")
 
-1. Choose **File > Run SQL Script**.<br/> 
+8. Choose **File > Run SQL Script**.<br/> 
 
 ![Run SQL Script](images/mysql-run-script.png)
 
-1. Open the sql file from `C:\code\bikeshop\bikeshop.sql` and click the **Run**.<br/>
+9. Open the sql file from `C:\code\bikeshop\bikeshop.sql` and click the **Run**.<br/>
 
 ![Workbench run query](images/running_query_create_schema.png "Run Query in Workbench")
 
-1. Once the script has been executed the database schema "bikestore" will have been created, click the **Close button**.<br/>
+10. Once the script has been executed the database schema "bikestore" will have been created, click the **Close button**.<br/>
 
-1. Click the refresh icon to see it listed in the set of availble schema.<br/>
+11. Click the refresh icon to see it listed in the set of availble schema.<br/>
 
 ![Schema created](images/workbench_schema_created.png "DB Schema Created")
 
-1. Return to Azure portal and in the App Service blade click on the URL for the website.<br/>
+12. Return to Azure portal and in the App Service blade click on the URL for the website.<br/>
 
 ![Open website](images/appservices.png)
 
-1. The website should be up and running.<br/>
+13. The website should be up and running.<br/>
 
 ![Running website](images/running_website.png "Running website")
-   <br>
+
+   
+   
 ## Scenario 4: Scale up
 
 Microsoft Azure offers a variety of pricing tiers for the Azure Database for MySQL service. In the earlier stages of this hands on lab, the lowest priced teir was used. In the real world, there may be times the application which relies upon your MySQL database will come under heavy load. In turn, this load may consume all of the resources available to your MySQL database instance, causing degraded performance. Scaling up your Azure Database for MySQL will help to noticeably improve performance in many of these cases, allowing you to keep processing your data efficiently.
@@ -214,13 +216,13 @@ There are two options to scale up or scale down the Azure Database for MySQL ser
 
 1. Open [https://portal.azure.com](https://portal.azure.com).<br/>
 
-1. Open All Resources blade and click on the MySQL database that you want to scale.<br/>
+2. Open All Resources blade and click on the MySQL database that you want to scale.<br/>
 
-1. Click **Pricing Tier** option.<br/>
+3. Click **Pricing Tier** option.<br/>
 
  ![Pricing Tier](images/mysql-pricing-option.png)
 
-1. Change the **Compute Units** up or down as need and click OK to save changes.<br/>
+4. Change the **Compute Units** up or down as need and click OK to save changes.<br/>
     > Note that currently only the Basic level at either 50 or 100 compute units is available  
 
 ![Compute units](images/mysql-compute.png)
@@ -244,8 +246,8 @@ There are two options to scale up or scale down the Azure Database for MySQL ser
 ```
 az mysql  server update [MyResourceGroupName] --name [mysqlDatabaseName] --compute-units 50
 ```
-    <br>
+ 
     
 # CONCLUSION
-    <br>
+   
 As a fully integrated service, Azure Database for MySQL plugs you into Microsoft’s global network of value-add services, datacenters, security features, and round-the-clock monitoring.  Azure Database for MySQL is designed to deliver highly available MySQL Compatibility at scale to the forefront, all backed by a best of class SLA.   Trust Azure to keep your enterprise-ready MySQL applications up and running.
