@@ -18,8 +18,13 @@
 ```bash
 node sql_db_flightinsert.js
 node sql_db_insert.js
+```
+When this is completed, go back to the terminal that is running the API-tier (this is where you ran the npm start command) and enter the following:
+```
+ctrl+c
 npm start
 ```
+
 <img src="images/sqlcommands.jpg"/><br/>
 
 9. Now, to start the **ContosoAir Website** layer, go to /home/CosmosDB-Hackfest/ContosoAir/src/ContosoAir.Website. Open terminal from there and run **ng serve** command in terminal. Minimize the terminal once command is executed, do not exit or CTRL+C.<br/>
