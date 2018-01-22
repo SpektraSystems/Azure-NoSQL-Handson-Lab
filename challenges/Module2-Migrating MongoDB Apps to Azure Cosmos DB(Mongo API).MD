@@ -372,7 +372,8 @@ Azure Cosmos DB allows you to scale the throughput of a collection by just a cou
 
 Here you should see the current throughput and options to increase/decrease the throughput. You can make the necessary changes and Click **Save**.
 
-    ![](images/scalethroughput.png)
+    ![](./images/scalethroughput.png)
+    <img src="images/scalethroughput.png"/>
 
 
 ## Understanding Cosmos DB Backup and restore functionality.
