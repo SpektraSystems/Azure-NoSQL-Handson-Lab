@@ -5,7 +5,7 @@
 <img src="images/sqlcosmos.jpg"/><br/>
 3. **Click** on **Keys** option present under Cosmos DB Account blade, and copy **URI** and **PRIMARY KEY**.<br/>
 <img src="images/sqlkey.jpg"/><br/>
-4. **Go** back to **Visual Studio Code** IDE and paste the **URI** value against **DOCUMENT_DB_ENDPOINT**, **PRIMARY KEY** against **DOCUMENT_DB_PRIMARYKEY**, **DOCUMENT_DB_DATABASE** and change the **API_MODE** to **SQL** in the **config.js**.<br/>
+4. **Go** back to **Visual Studio Code** IDE and paste the **URI** value against **DOCUMENT_DB_ENDPOINT**, **PRIMARY KEY** against **DOCUMENT_DB_PRIMARYKEY**, The original database name you created (under overview tab) against **DOCUMENT_DB_DATABASE** and change the **API_MODE** to **SQL** in the **config.js**.<br/>
 
 5. **Navigate** back to the Azure Portal's Resource groups option present in the favourites menu on the left side panel and select the **resource group** and click on **Azure Cosmos DB Account** then, click on **Replicate data globally** option present under **SETTINGS** section in **Cosmos DB Account** blade.<br/>
 
