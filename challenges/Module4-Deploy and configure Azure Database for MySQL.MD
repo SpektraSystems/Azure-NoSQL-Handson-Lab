@@ -63,7 +63,7 @@ az mysql server create --resource-group [MyResourceGroupName] --name [mysqlDatab
 ```
 az mysql server firewall-rule create --resource-group [MyResourceGroupName] --server [mysqlDatabaseName]--name AllowAllIps --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
 ```
-7. Congratuations. You now have somewhere to store your data.
+7. Congratuations. You have now created MySQL as a PaaS service in Azure.
 
 <br>
 
