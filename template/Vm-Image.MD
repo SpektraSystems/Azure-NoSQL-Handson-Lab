@@ -141,7 +141,9 @@ sudo apt-get -f install -y
 ```
 <img src="images/installrdp.jpg"/><br/>
 28.	Connect to your Linux VM using an SSH client. In the SSH window, type the following command:<br/>
+```
 sudo waagent -deprovision
+```
 <img src="images/installrdp1.jpg"/><br/>
 29.	From azure portal, go to virtual machine and select the JumpVM. In Overview section, click on Capture button.<br/>
 <img src="images/rdp1.jpg"/><br/>
