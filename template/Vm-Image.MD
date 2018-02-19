@@ -51,7 +51,7 @@ sudo service mongod start
 mongo
 ```
 <img src="images/custom5.jpg"/><br/>
-13.	You can also verify the records in mongoDB database while running the following commands.<br/><br/>
+13.	You can also verify the records in mongoDB database while running the following commands.<br/>
 ```
 shows dbs
 use db_name
@@ -78,7 +78,7 @@ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 <img src="images/customa.jpg"/><br/>
-18.	Check the available Node.js versions with following command.<br/><br/>
+18.	Check the available Node.js versions with following command.<br/>
 ```
 npm -v
 ```
