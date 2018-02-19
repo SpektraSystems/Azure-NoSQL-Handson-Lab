@@ -62,7 +62,7 @@ exit
 ```
 git -C /home/demouser/ clone https://github.com/SpektraSystems/CosmosDB-Hackfest.git
 ```
-<img src="images/custom7.jpg"/><br/>
+<img src="images/cusom7.jpg"/><br/>
 15.	Run the following command, it will update the package lists for upgrades for packages that need upgrading, as well as new packages that have just come to the repositories.<br/>
 ```
 sudo apt-get update && sudo apt-get -y upgrade
