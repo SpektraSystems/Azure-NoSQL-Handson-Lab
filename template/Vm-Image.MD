@@ -122,7 +122,7 @@ sudo apt-get install xfce4 -y
 ```
 sudo apt-get install xrdp -y
 ```
-<img src="images/modxrdpule.jpg"/><br/>
+<img src="images/xrdp.jpg"/><br/>
 25.	Configure xrdp to use xfce as your desktop environment as follows:<br/>
 ```
 echo xfce4-session >~/.xsession
