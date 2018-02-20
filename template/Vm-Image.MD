@@ -197,9 +197,9 @@ sudo waagent -deprovision
 <img src="images/jumpvm2.jpg"/><br/>
 1. Go to **File** and select the **Open Folder**.
 <img src="images/vscode1.jpg"/><br/>
-1. Select demouser and Click on CosmosDB-Hackfest.<br/>
+1. Select **demouser** and Click on **CosmosDB-Hackfest**.<br/>
 <img src="images/vscode2.jpg"/><br/>
 1. Now, open **scr** folder in VS code.<br/>
 <img src="images/vscode3.jpg"/><br/>
 1. Notice the folders hierarchy in VS code.<br/>
-<img src="images/vscode3.jpg"/>.<br/>
+<img src="images/vscode4.jpg"/>.<br/>
