@@ -124,6 +124,7 @@ sudo sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/lib/x86_64-linux-gnu/libxcb.so.1
 sudo apt-get update
 sudo apt-get install xfce4 -y
 ```
+<img src="images/update.jpg"/><br/>
 <img src="images/xfce.jpg"/><br/>
 24.	Install xrdp on your Ubuntu VM as follows:<br/>
 ```
