@@ -113,8 +113,14 @@ sudo apt install code
 ```
 <img src="images/update.jpg"/><br/>
 <img src="images/installcode.jpg"/><br/>
+23. Run the below command for installing vscode:
+```
+sudo sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/lib/x86_64-linux-gnu/libxcb.so.1
+```
+<img src="images/codenew.jpg"/><br/>
 23.	Install a desktop environment on your Linux VM. Next, install xfce using apt as follows: <br/>
 ```
+sudo apt-get update
 sudo apt-get install xfce4 -y
 ```
 <img src="images/xfce.jpg"/><br/>
@@ -128,28 +134,51 @@ sudo apt-get install xrdp -y
 echo xfce4-session >~/.xsession
 ```
 <img src="images/session.jpg"/><br/>
-26.	Configure google chrome while running following commands one by one:<br/>
+26. Restart the xrdp service for the changes to take effect as follows:<br/>
+```
+sudo service xrdp restart
+```
+<img src="images/google.jpg"/><br/>
+27. Go to azure portal and select **Resource Group>Virtual Machine>Networking**. Add Inbound rule under networking as shown below:<br/>
+<img src="images/inbound.jpg"/><br/>
+28. Provide the following parameters for creating Inbound Rule:<br/>
+<img src="images/port3389.jpg"/><br/>
+29. Go back to putty and use netstat on your Linux VM to verify that your VM is listening for RDP connections as follows:<br/>
+```
+sudo netstat -plnt | grep rdp
+```
+img src="images/netstat.jpg"/><br/>
+30. The following example shows the VM listening on TCP port 3389 as expected:<br/>
+img src="images/netset2.jpg"/><br/>
+31. After adding the remote desktop details, we need to update the packages list with following command.<br/>
+```
+sudo apt-get -f install -y
+```
+<img src="images/installrdp.jpg"/><br/>
+
+32.	Configure google chrome while running following commands one by one:<br/>
 ```
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 ```
 <img src="images/google.jpg"/><br/>
 <img src="images/google1.jpg"/><br/>
-27.	 After adding the remote desktop details, we need to update the packages list with following command.<br/>
+33.	 After adding the remote desktop details, we need to update the packages list with following command.<br/>
 ```
 sudo apt-get -f install -y
 ```
 <img src="images/installrdp.jpg"/><br/>
-28.	Connect to your Linux VM using an SSH client. In the SSH window, type the following command:<br/>
+
+34.	Connect to your Linux VM using an SSH client. In the SSH window, type the following command:<br/>
 ```
 sudo waagent -deprovision
 ```
 <img src="images/installrdp1.jpg"/><br/>
-29.	From azure portal, go to virtual machine and select the JumpVM. In Overview section, click on Capture button.<br/>
+30.	From azure portal, go to virtual machine and select the JumpVM. In Overview section, click on Capture button.<br/>
 <img src="images/rdp1.jpg"/><br/>
-30.	 Click on Create button for creating image.<br/>
+31.	 Click on Create button for creating image.<br/>
 <img src="images/rdp2.jpg"/><br/>
-31.	 Once the image deployed click on the it and go to image.<br/>
+32.	 Once the image deployed click on the it and go to image.<br/>
 <img src="images/rdp3.jpg"/><br/>
-32.	Click on Create VM for deploying virtual machine with created image.<br/>
+33.	Click on Create VM for deploying virtual machine with created image.<br/>
 <img src="images/rdp4.jpg"/><br/>
