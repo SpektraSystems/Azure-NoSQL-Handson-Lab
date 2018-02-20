@@ -54,7 +54,8 @@ mongo
 13.	You can also verify the records in mongoDB database while running the following commands.<br/>
 ```
 shows dbs
-use db_name
+use contosoairdb3
+db.contoairdb3.insert({"test":"test"})
 exit
 ```
 <img src="images/custom6.jpg"/><br/> 
@@ -147,9 +148,9 @@ sudo service xrdp restart
 ```
 sudo netstat -plnt | grep rdp
 ```
-img src="images/netstat.jpg"/><br/>
+<img src="images/netstat.jpg"/><br/>
 30. The following example shows the VM listening on TCP port 3389 as expected:<br/>
-img src="images/netset2.jpg"/><br/>
+<img src="images/netset2.jpg"/><br/>
 31. After adding the remote desktop details, we need to update the packages list with following command.<br/>
 ```
 sudo apt-get -f install -y
@@ -163,11 +164,6 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 ```
 <img src="images/google.jpg"/><br/>
 <img src="images/google1.jpg"/><br/>
-33.	 After adding the remote desktop details, we need to update the packages list with following command.<br/>
-```
-sudo apt-get -f install -y
-```
-<img src="images/installrdp.jpg"/><br/>
 
 34.	Connect to your Linux VM using an SSH client. In the SSH window, type the following command:<br/>
 ```
