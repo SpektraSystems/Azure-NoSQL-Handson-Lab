@@ -180,3 +180,18 @@ sudo waagent -deprovision
 <img src="images/rdp3.jpg"/><br/>
 37.	Click on Create VM for deploying virtual machine with created image.<br/>
 <img src="images/rdp4.jpg"/><br/>
+
+### Connect to Virtual Machine
+1. From azure portal, go to virtual machine and select the JumpVM. In Overview section, click on **Connect** button. It will show username with IP address copy that IP address.<br/>
+<img src="images/jumpvm1.jpg"/><br/>
+1. Click on start button and search for **Remote Desktop Connection** and click on it.<br/>
+1. Remote Desktop Connection window will pop-up in that provide the IP Address that you copied in above step.<br/>
+<img src="images/rdc.jpg"/><br/>
+1. Click on **Yes** button in Remote Desktop Connection Wizard.<br/>
+<img src="images/rdc2.jpg"/><br/>
+1. Enter the credentials provided in the mail to connect to VM.<br/>
+<img src="images/xrdp.jpg"/><br/>
+
+    > Note If you get err:connecting at first login: Click OK and try again.
+1. Once you are logged in the Ubuntu OS click on Application for accessing visual studio code as shown blow.<br/>
+<img src="images/jumpvm2.jpg"/><br/>
