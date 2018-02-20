@@ -1,23 +1,23 @@
 ### Create virtual machine
-1.	Click the New button found on the upper left-hand corner of the Azure portal.<br/>
-2.	Select Compute, and then select Ubuntu Server 16.04 LTS.<br/>
-3.	Enter the virtual machine information. For Authentication type, select Password and enter the Password. When complete, click OK.<br/>
+1.	Click the **New** button found on the upper left-hand corner of the Azure portal.<br/>
+2.	Select Compute, and then select **Ubuntu Server 16.04 LTS**.<br/>
+3.	Enter the virtual machine information. For Authentication type, select **Password** and enter the Password. When complete, click **OK**.<br/>
 <img src="images/vm1.png"/><br/>
 4.	Select a size for the VM. To see more sizes, select View all or change the Supported disk type filter.<br/>
 <img src="images/vm2.png"/><br/>
-5.	Under Settings, keep the defaults and click OK.<br/>
+5.	Under Settings, keep the defaults and click **OK**.<br/>
 6.	On the summary page, click Ok to start the virtual machine deployment.<br/>
 7.	The VM will be pinned to the Azure portal dashboard. Once the deployment has completed, the VM summary automatically opens.<br/>
 
 ### Create ubuntu vm images 
-1.	Click on the Resource Group icon on the Menu navigation bar.<br/>
+1.	Click on the **Resource Group** icon on the Menu navigation bar.<br/>
 <img src="images/image1.png"/><br/>
-2.	From azure portal, go to virtual machine and select the JumpVM. In Overview section, click on Connect button. It will show username with IP address copy that IP address.<br/>
+2.	From azure portal, go to virtual machine and select the **JumpVM**. In Overview section, click on **Connect** button. It will show username with IP address copy that IP address.<br/>
 <img src="images/image2.png"/><br/>
 3.	Now run putty.exe from your PC.
-4.	This is the application window that pops up when you run putty.exe. Paste the Username with Public IP address of the VM that you copied in step 2 to the Host Name (or IP address) box of the putty. Port will be 22 by default. Click on Open.<br/><br/>
+4.	This is the application window that pops up when you run putty.exe. Paste the Username with Public IP address of the VM that you copied in step 2 to the Host Name (or IP address) box of the putty. Port will be 22 by default. Click on **Open**.<br/><br/>
 <img src="images/image3.jpg"/><br/>
-5.	The PuTTY Security Alert will pop up. Click on Yes.<br/>
+5.	The PuTTY Security Alert will pop up. Click on **Yes**.<br/>
 <img src="images/image4.jpg"/><br/>
 6.	Login using your password for the Virtual Machine provided while creating virtual machine.<br/>
 <img src="images/image5.jpg"/><br/>
