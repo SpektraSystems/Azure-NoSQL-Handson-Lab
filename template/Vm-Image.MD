@@ -9,7 +9,7 @@
 6.	On the summary page, click Ok to start the virtual machine deployment.<br/>
 7.	The VM will be pinned to the Azure portal dashboard. Once the deployment has completed, the VM summary automatically opens.<br/>
 
-### Create ubuntu vm images 
+### Configure ubuntu vm 
 1.	Click on the **Resource Group** icon on the Menu navigation bar.<br/>
 <img src="images/image1.png"/><br/>
 2.	From azure portal, go to virtual machine and select the **JumpVM**. In Overview section, click on **Connect** button. It will show username with IP address copy that IP address.<br/>
