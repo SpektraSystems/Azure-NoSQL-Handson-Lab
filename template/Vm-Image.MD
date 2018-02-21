@@ -91,7 +91,7 @@ sudo npm install
 ls
 node local_mongo_db_insert.js
 ```
-<img src="images/customc.jpg"/><br/>
+<img src="images/ngserve.jpg"/><br/>
 <img src="images/node.jpg"/><br/>
 20.	To start the ContosoAir Website layer, run the below commands:<br/>
 ```
