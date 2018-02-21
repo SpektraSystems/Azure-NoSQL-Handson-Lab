@@ -97,6 +97,7 @@ npm start
 cd
 cd CosmosDB-Hackfest/ContosoAir/src/ContosoAir.Website/
 sudo npm install -g @angular/cli
+sudo npm install
 ```
 <img src="images/customd.jpg"/><br/>
 21.	Install repository and key with the following script:<br/>
