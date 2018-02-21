@@ -131,7 +131,7 @@ sudo apt-get install xfce4 -y
 ```
 sudo apt-get install xrdp -y
 ```
-<img src="images/xrdp.jpg"/><br/>
+<img src="images/xrdp1.jpg"/><br/>
 26.	Configure xrdp to use xfce as your desktop environment as follows:<br/>
 ```
 echo xfce4-session >~/.xsession
@@ -141,10 +141,10 @@ echo xfce4-session >~/.xsession
 ```
 sudo service xrdp restart
 ```
-<img src="images/google.jpg"/><br/>
+<img src="images/restart.jpg"/><br/>
 28. Go to azure portal and select **Resource Group>Virtual Machine>Networking**. Add Inbound rule under networking as shown below:<br/>
 <img src="images/inbound.jpg"/><br/>
-29. Provide the following parameters for creating Inbound Rule:<br/>
+29. To allow Remote Desktop traffic to reach your Linux VM, a network security group rule needs to be created that allows TCP on port 3389 to reach your VM.Provide the following parameters for creating Inbound Rule:<br/>
 <img src="images/port3389.jpg"/><br/>
 30. Go back to putty and use netstat on your Linux VM to verify that your VM is listening for RDP connections as follows:<br/>
 ```
