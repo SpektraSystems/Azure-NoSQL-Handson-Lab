@@ -2,12 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "powerBIVirtualMachineName": {
-            "type": "string",
-            "metadata": {
-                "description": "Name of PowerBI VM"
-            }
-        },
         "adminUsername": {
             "type": "string",
             "metadata": {
@@ -21,15 +15,16 @@
             }
         }
     },
-    "variables": {
-        "powerBINicName": "[concat(parameters('powerBIVirtualMachineName'), '-nic')]",
-        "powerBIPublicIPAddressName": "[concat('powerbivmpip', uniqueString(resourceGroup().id))]",
-        "nsgName": "nsg",
-        "vmStorageAccountContainerName": "vhds",
-        "virtualNetworkName": "vnet",
-        "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
-        "subnetRef": "[concat(variables('vnetID'),'/subnets/','subnet')]"
-    },
+  "variables": {
+    "powerBIVirtualMachineName": "powerbiVm",
+    "powerBINicName": "[concat(variables('powerBIVirtualMachineName'), '-nic')]",
+    "powerBIPublicIPAddressName": "[concat('powerbivmpip', uniqueString(resourceGroup().id))]",
+    "nsgName": "nsg",
+    "vmStorageAccountContainerName": "vhds",
+    "virtualNetworkName": "vnet",
+    "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
+    "subnetRef": "[concat(variables('vnetID'),'/subnets/','subnet')]"
+  },
   "resources": [
     {
       "apiVersion": "2016-03-30",
@@ -165,7 +160,7 @@
     {
       "apiVersion": "2016-04-30-preview",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[parameters('powerBIVirtualMachineName')]",
+      "name": "[variables('powerBIVirtualMachineName')]",
       "location": "[resourceGroup().location]",
       "comments": "PowerBI VM",
       "dependsOn": [
@@ -179,7 +174,7 @@
           "vmSize": "Standard_A2_v2"
         },
         "osProfile": {
-          "computerName": "[parameters('powerBIVirtualMachineName')]",
+          "computerName": "[variables('powerBIVirtualMachineName')]",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPassword')]",
           "windowsConfiguration": {
@@ -188,7 +183,10 @@
         },
         "storageProfile": {
           "imageReference": {
-            "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/cosmos-powerbi-vmimage/providers/Microsoft.Compute/images/cosmospowerbi-', resourceGroup().location)]"
+            "publisher": "MicrosoftWindowsServer",
+            "offer": "WindowsServer",
+            "sku": "2016-Datacenter",
+            "version": "latest"
           },
           "osDisk": {
             "createOption": "fromImage",
@@ -204,7 +202,30 @@
             }
           ]
         }
-      }
+      },
+      "resources": [
+        {
+          "type": "extensions",
+          "name": "powervmExtension",
+          "apiVersion": "2015-06-15",
+          "location": "[resourceGroup().location]",
+          "dependsOn": [
+            "[concat('Microsoft.Compute/virtualMachines/', variables('powerBIVirtualMachineName'))]"
+          ],
+          "properties": {
+            "publisher": "Microsoft.Compute",
+            "type": "CustomScriptExtension",
+            "typeHandlerVersion": "1.3",
+            "autoUpgradeMinorVersion": "true",
+            "settings": {
+              "fileUris": [
+                "https://cosmosdbstorage.blob.core.windows.net/cosmosdbcontainer/Install_Tools.ps1"
+              ],
+              "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File Install_Tools.ps1"
+            }
+          }
+        }
+      ]
     }
   ],
     "outputs": {
@@ -212,13 +233,13 @@
             "type": "string",
             "value": "[parameters('adminUsername')]"
         },
-        "adminPassword": {
-            "type": "string",
-            "value": "[parameters('adminPassword')]"
-        },
-        "powerBIVMDnsName": {
-            "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('powerBIPublicIPAddressName'))).dnsSettings.fqdn]",
-            "type": "string"
-        }
+      "adminPassword": {
+        "type": "string",
+        "value": "[parameters('adminPassword')]"
+      },
+      "powerBIVMDnsName": {
+        "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('powerBIPublicIPAddressName'))).dnsSettings.fqdn]",
+        "type": "string"
+      }
     }
 }
