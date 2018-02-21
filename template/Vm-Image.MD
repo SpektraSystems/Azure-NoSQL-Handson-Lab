@@ -12,7 +12,7 @@
 ### Configure ubuntu vm 
 1.	Click on the **Resource Group** icon on the Menu navigation bar.<br/>
 <img src="images/image1.png"/><br/>
-2.	From azure portal, go to virtual machine and select the **JumpVM**. In Overview section, click on **Connect** button. It will show username with IP address copy that IP address.<br/>
+2.	From azure portal, go to virtual machine and select the **VM** that you created above. In Overview section, click on **Connect** button. It will show username with IP address copy that IP address.<br/>
 <img src="images/image2.png"/><br/>
 3.	Now run putty.exe from your PC.
 4.	This is the application window that pops up when you run putty.exe. Paste the Username with Public IP address of the VM that you copied in step 2 to the Host Name (or IP address) box of the putty. Port will be 22 by default. Click on **Open**.<br/><br/>
