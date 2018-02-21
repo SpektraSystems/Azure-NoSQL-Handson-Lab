@@ -86,12 +86,13 @@ npm -v
 <img src="images/customb.jpg"/><br/>
 19.	After installing we need for verifying the application with given commands:<br/>
 ```
-ls
 cd CosmosDB-Hackfest/ContosoAir/src/ContosoAir.Services/
 sudo npm install
-npm start
+ls
+node local_mongo_db_insert.js
 ```
 <img src="images/customc.jpg"/><br/>
+<img src="images/node.jpg"/><br/>
 20.	To start the ContosoAir Website layer, run the below commands:<br/>
 ```
 cd
@@ -167,20 +168,6 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 ```
 <img src="images/google.jpg"/><br/>
 <img src="images/google1.jpg"/><br/>
-
-34.	Connect to your Linux VM using an SSH client. In the SSH window, type the following command:<br/>
-```
-sudo waagent -deprovision
-```
-<img src="images/installrdp1.jpg"/><br/>
-35.	From azure portal, go to virtual machine and select the JumpVM. In Overview section, click on Capture button.<br/>
-<img src="images/rdp1.jpg"/><br/>
-36.	 Click on Create button for creating image.<br/>
-<img src="images/rdp2.jpg"/><br/>
-37.	 Once the image deployed click on the it and go to image.<br/>
-<img src="images/rdp3.jpg"/><br/>
-38.	Click on Create VM for deploying virtual machine with created image.<br/>
-<img src="images/rdp4.jpg"/><br/>
 
 ### Connect to Virtual Machine
 1. From azure portal, go to virtual machine and select the JumpVM. In Overview section, click on **Connect** button. It will show username with IP address copy that IP address.<br/>
