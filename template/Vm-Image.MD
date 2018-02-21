@@ -170,7 +170,7 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 <img src="images/google1.jpg"/><br/>
 
 ### Connect to Virtual Machine
-1. From azure portal, go to virtual machine and select the JumpVM. In Overview section, click on **Connect** button. It will show username with IP address copy that IP address.<br/>
+1. From azure portal, go to virtual machine and select the VM that you created above. In Overview section, click on **Connect** button. It will show username with IP address copy that IP address.<br/>
 <img src="images/jumpvm1.jpg"/><br/>
 1. Click on start button and search for **Remote Desktop Connection** and click on it.<br/>
 1. Remote Desktop Connection window will pop-up in that provide the IP Address that you copied in above step.<br/>
