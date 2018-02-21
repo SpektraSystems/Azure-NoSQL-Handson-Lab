@@ -183,11 +183,11 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
     > Note If you get err:connecting at first login: Click OK and try again.
 1. Once you are logged in the Ubuntu OS click on Application for accessing visual studio code as shown blow.<br/>
 <img src="images/jumpvm2.jpg"/><br/>
-1. Go to **File** and select the **Open Folder**.
+1. Go to **File** and click on **Open Folder**.
 <img src="images/vscode1.jpg"/><br/>
-1. Select **demouser** and Click on **CosmosDB-Hackfest**.<br/>
+1. Select **demouser** and open the **CosmosDB-Hackfest** folder. Under Cosmos-Hackfest select the **ContosoAir** folder.<br/>
 <img src="images/vscode2.jpg"/><br/>
-1. Now, open **scr** folder in VS code.<br/>
+1. Now, select the **scr** folder and click on **OK**.<br/>
 <img src="images/vscode3.jpg"/><br/>
 1. Notice the folders hierarchy in VS code.<br/>
 <img src="images/vscode4.jpg"/>.<br/>
