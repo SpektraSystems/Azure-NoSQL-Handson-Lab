@@ -2,7 +2,7 @@
 1.	Click the **New** button found on the upper left-hand corner of the Azure portal.<br/>
 2.	Select Compute, and then select **Ubuntu Server 16.04 LTS**.<br/>
 3.	Enter the virtual machine information. For Authentication type, select **Password** and enter the Password. When complete, click **OK**.<br/>
-<img src="images/vm1.png"/><br/>
+<img src="images/vm11.jpg"/><br/>
 4.	Select a size for the VM. To see more sizes, select View all or change the Supported disk type filter.<br/>
 <img src="images/vm2.png"/><br/>
 5.	Under Settings, keep the defaults and click **OK**.<br/>
