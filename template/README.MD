@@ -202,3 +202,6 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 <img src="images/vscode3.jpg"/><br/>
 1. Notice the folders hierarchy in VS code.<br/>
 <img src="images/vscode4.jpg"/>.<br/>
+
+
+Now you're ready to follow lab instructions and perform challanges given here: https://github.com/SpektraSystems/Azure-NoSQL-Handson-Lab/tree/master/challenges
