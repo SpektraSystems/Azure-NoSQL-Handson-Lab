@@ -1,4 +1,12 @@
-### Create virtual machine
+## Deploy in your own Azure Subscription.
+
+You can use these instructions to create the lab environment in your own subscription. Essentially, there're two steps.
+
+1.	Deploy the Azure Resource Manager template <br/>
+2.  Create linux based Jump Virtual machine. <br/>
+
+
+### Create JUMP virtual machine
 1.	Click the **New** button found on the upper left-hand corner of the Azure portal.<br/>
 2.	Select Compute, and then select **Ubuntu Server 16.04 LTS**.<br/>
 3.	Enter the virtual machine information. For Authentication type, select **Password** and enter the Password. When complete, click **OK**.<br/>
