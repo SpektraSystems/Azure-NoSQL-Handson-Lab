@@ -3,7 +3,7 @@
 You can use these instructions to create the lab environment in your own subscription. Essentially, there're two steps.
 
 1.	Deploy the Azure Resource Manager template  by clicking on following button.
-              <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSpektraSystems%2FAzure-NoSQL-Handson-Lab%2Fmaster%2Fazuredeploy.json" target="_blank">
+              <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSpektraSystems%2FAzure-NoSQL-Handson-Lab%2Fmaster%2Ftemplate%2Fazuredeploy.json" target="_blank">
 <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
 </a> <br/>
 2.  Create linux based Jump Virtual machine by following instructions given below. <br/>
