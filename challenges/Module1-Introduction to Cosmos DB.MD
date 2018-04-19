@@ -230,3 +230,6 @@ For example: SELECT * FROM c  WHERE c.Sector= "Financial"
 * You should now see the Pie Chart showing different sectors in relational to the Count of Shares Outstanding values.
 <img src="images/piechart1.jpg"/><br/>
 * You now have created a basic report. You can further customize the report by adding more visualizations.
+
+
+Continue with Challange 2 Here: https://github.com/SpektraSystems/Azure-NoSQL-Handson-Lab/blob/master/challenges/Module2-Migrating%20MongoDB%20Apps%20to%20Azure%20Cosmos%20DB(Mongo%20API).MD 
